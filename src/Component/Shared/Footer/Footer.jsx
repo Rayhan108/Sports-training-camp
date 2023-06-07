@@ -2,9 +2,9 @@
 import logo from "../../../assets/Orange blue football sport logo.png"
 const Footer = () => {
     return (
-        <footer className=" w-full text-white mt-12">
+        <footer className=" w-full text-white mt-5 ">
     <div className="bg-base-200 ">
-    <div className="container mx-auto py-6 px-4">
+    <div className=" mx-auto py-6 px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img src={logo} alt="Logo" className="h-20 w-20" />
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </div>
     </div>
-          {/* <hr className="my-4" /> */}
+         
           <div className="text-center py-3 text-black bg-base-300 text-sm">
             <p>&copy; {new Date().getFullYear()} Sports Education Camp. All rights reserved.</p>
           </div>
