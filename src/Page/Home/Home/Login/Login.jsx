@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {AiFillEyeInvisible} from "react-icons/ai"
+import SocialLogin from "../../../../Component/Shared/SocialLogin/SocialLogin";
 const Login = () => {
   const [isShow,setISShow]= useState(false)
   return (
@@ -12,21 +13,20 @@ const Login = () => {
         <form>
           <div className="mb-4">
             <label
-              htmlFor="email"
+              
               className="block text-gray-700 text-sm font-bold mb-2"
             >
               Email
             </label>
             <input
               type="email"
-              id="email"
+             
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
             />
           </div>
           <div className="mb-6">
          <div className="flex justify-between">
          <label
-              htmlFor="password"
               className="block text-gray-700 text-sm font-bold mb-2"
             >
               Password
@@ -37,7 +37,7 @@ const Login = () => {
          </div>
             <input
               name="password"
-              id="password1"
+             
               type={isShow?"text":"password"}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
             />
@@ -49,12 +49,13 @@ const Login = () => {
           >
             Login
           </button>
-          <p className="mt-5">
+          <p className="mt-5 text-center">
             Do not Have Account?{" "}
             <Link to="/signUp">
               <span className="text-amber-700"> SignUp</span>
             </Link>
           </p>
+          <SocialLogin></SocialLogin>
         </form>
       </div>
     </div>
