@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Component/Shared/SocialLogin/SocialLogin";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import toast from 'react-hot-toast'
+import useAuth from "../../hooks/useAuth";
+import { storeUserInDB } from "../../Component/Utilities/utilities";
 const SignUp = () => {
+  const {createUser,updateUserData}=useAuth()
     const [confirmPassword, setConfirmPassword] = useState('');
+    
 const [confirmPasswordError, setConfirmPasswordError] = useState('');
-
+const location =useLocation()
+const navigate = useNavigate()
+const from = location.state?.from?.pathname || "/";
 const handleConfirmPasswordChange = (e) => {
 
     console.log(e.target.value);
@@ -26,6 +32,20 @@ const handleConfirmPasswordChange = (e) => {
           }else{
             toast.success('Password Matched')
           }
+          // create new user
+          createUser(data.email,data.password)
+          .then(result=>{
+            const loggedUser=result.user;
+            updateUserData(loggedUser,loggedUser.displaName,loggedUser.photoURL)
+            navigate(from, { replace: true })
+            reset()
+          toast.success('Registration Success')
+          storeUserInDB(loggedUser);
+        })
+        .catch(error=>{
+            toast.error(error.message)
+        
+          })
     
     };
   return (

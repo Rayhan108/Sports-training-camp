@@ -1,10 +1,11 @@
-// save students on db
+// save students email on db
 export const storeUserInDB = user => {
+  console.log(user.email);
     const currentLoggedUsers = {
       email: user.email,
     }
   
-    fetch(`https://localhost:50000/students/${user?.email}`, {
+    fetch(`http://localhost:5000/users/${user?.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

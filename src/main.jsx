@@ -7,10 +7,13 @@ import {
 import './index.css'
 import { Toaster } from 'react-hot-toast'
 import router from './routes/routes/router';
+import AuthProvider from './Provider/AuthProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Toaster />
+  <AuthProvider>
+  <Toaster />
     <RouterProvider router={router} />
+  </AuthProvider>
   </React.StrictMode>,
 )
