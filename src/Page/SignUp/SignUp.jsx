@@ -38,12 +38,13 @@ const handleConfirmPasswordChange = (e) => {
           createUser(data.email,data.password)
           .then(result=>{
             const loggedUser=result.user;
+            const user = { name: loggedUser.displaName, email: loggedUser.email }
             updateUserData(loggedUser,loggedUser.displaName,loggedUser.photoURL)
             navigate(from, { replace: true })
             reset()
             setLoader(false)
           toast.success('Registration Success')
-          storeUserInDB(loggedUser);
+          storeUserInDB(user);
         })
         .catch(error=>{
           setLoader(false)

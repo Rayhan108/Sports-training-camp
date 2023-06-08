@@ -20,8 +20,8 @@ const handleGoogleLogin = () => {
     .then((result) => {
       console.log(result);
       navigate(from)
-      
-      storeUserInDB(result.user);
+      const user = { name: result?.user?.displayName, email: result?.user?.email }
+      storeUserInDB(user);
       setLoader(false)
      toast.success('Login Successfull')
     })
