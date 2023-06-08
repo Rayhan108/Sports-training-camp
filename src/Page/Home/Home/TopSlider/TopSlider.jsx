@@ -21,9 +21,10 @@ const TopSlider = () => {
          <div>
              <img src={img1} />
              <div className="absolute h-full md:h-[750px] flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="md:space-y-7 md:w-1/2 md:pl-12 ">
+        <div className="md:space-y-7  md:w-1/2 md:pl-12 ">
         <h1 className="md:text-6xl  text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
+          <p className="font-bold text-white">Explore our website to learn more about our training programs, coaching staff, facilities, and registration details. We look forward to welcoming you to our Sports Training Camp family!</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
        
@@ -38,6 +39,7 @@ const TopSlider = () => {
         <div className="md:space-y-7 md:w-1/2 md:pl-12">
         <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
+          <p className="font-bold text-white">Explore our website to learn more about our training programs, coaching staff, facilities, and registration details. We look forward to welcoming you to our Sports Training Camp family!</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
        
@@ -52,6 +54,7 @@ const TopSlider = () => {
         <div className="md:space-y-7 md:w-1/2 md:pl-12">
         <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
+          <p className="font-bold text-white">Explore our website to learn more about our training programs, coaching staff, facilities, and registration details. We look forward to welcoming you to our Sports Training Camp family!</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
        
@@ -66,6 +69,7 @@ const TopSlider = () => {
         <div className="md:space-y-7 md:w-1/2 md:pl-12">
         <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
+          <p className="font-bold text-white">Explore our website to learn more about our training programs, coaching staff, facilities, and registration details. We look forward to welcoming you to our Sports Training Camp family!</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
        
@@ -80,6 +84,7 @@ const TopSlider = () => {
         <div className="md:space-y-7 md:w-1/2 md:pl-12">
         <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
+          <p className="font-bold text-white">Explore our website to learn more about our training programs, coaching staff, facilities, and registration details. We look forward to welcoming you to our Sports Training Camp family!</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
        

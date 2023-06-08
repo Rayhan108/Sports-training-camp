@@ -12,12 +12,14 @@ const Footer = () => {
           
         </div>
         <div className="text-black text-sm">
+        <span className="footer-title">Address</span> 
               <p className="mb-1">123 Main Street,Srimongol,Sylet</p>
               <p className="mb-1">Bangladesh</p>
-              <p>3000</p>
+              <p>Post Code: 3000</p>
             </div>
             <div className="text-black text-sm">
-              <p className="mb-1">Phone: +88016586589845</p>
+            <span className="footer-title">Contact Info</span> 
+              <p className="mb-1 lg:mt-4">Phone: +88016586589845</p>
               <p>Email: info@sportseducationcamp.com</p>
             </div>
       </div>
