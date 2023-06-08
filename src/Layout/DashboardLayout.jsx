@@ -4,7 +4,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 
 const DashboardLayout = () => {
-
+const isAdmin =false;
+const isInstructor =true;
     return (
         <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -18,13 +19,44 @@ const DashboardLayout = () => {
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content font-bold">
       {/* Sidebar content here */}
-      <li><NavLink to="myClass">My Classes</NavLink></li>
-                <li><NavLink to="enrolledClass">My Enrolled Classes</NavLink></li>
-              
-                <div className="divider"></div>
-                <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                    <li><NavLink to="/"> Instractors</NavLink></li>
-                    <li><NavLink to="/">Classes</NavLink></li>
+
+      
+      {isAdmin && (
+            <>
+              <li>
+                <NavLink to="manageClass">Manage Classes</NavLink>
+              </li>
+              <li>
+                <NavLink to="manageInstructor">Manage Instructors</NavLink>
+              </li>
+            </>
+          )}
+          {isInstructor && (
+            <>
+              <li>
+                <NavLink to="myClass">My Classes</NavLink>
+              </li>
+              <li>
+                <NavLink to="addClass">Add A Class</NavLink>
+              </li>
+            </>
+          )}
+          {!isAdmin && !isInstructor && (
+            <>
+              <li>
+                <NavLink to="mySelectedClass">My Selected Classes</NavLink>
+              </li>
+              <li>
+                <NavLink to="enrolledClass">My Enrolled Classes</NavLink>
+              </li>
+            </>
+          )}
+        
+       <div className="divider"></div>
+         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
+             <li><NavLink to="/"> Instractors</NavLink></li>
+             <li><NavLink to="/">Classes</NavLink></li>
+    
                     
     </ul>
   
