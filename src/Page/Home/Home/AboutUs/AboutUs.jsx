@@ -1,6 +1,9 @@
 import Container from "../../../../Component/Container/Container";
 import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 import img from "../../../../assets/About.png"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 const AboutUs = () => {
   return (
     <div>
@@ -9,10 +12,19 @@ const AboutUs = () => {
         {" "}
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row ">
-            <div className="lg:w-1/2 ">
+            <div className="lg:w-1/2 "
+             
+        data-aos="fade-left"
+        data-aos-duration="1000"
+            >
               <img src={img} className="w-3/4 rounded-lg shadow-2xl" />
             </div>
-            <div className="lg:w-1/2 space-y-5 p-2">
+            <div className="lg:w-1/2 space-y-5 p-2"
+            
+             
+        data-aos="fade-right"
+        data-aos-duration="1000"
+            >
               <p className="py-6 text-5xl font-bold">
               Elevate Your Game at the Sports Training Camp
               </p>
