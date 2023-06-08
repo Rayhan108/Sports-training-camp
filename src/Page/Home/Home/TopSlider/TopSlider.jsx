@@ -20,9 +20,9 @@ const TopSlider = () => {
   <Carousel>
          <div>
              <img src={img1} />
-             <div className="absolute h-full flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="space-y-7 w-1/2 pl-12">
-        <h1 className="text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
+             <div className="absolute h-full md:h-[750px] flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="md:space-y-7 md:w-1/2 md:pl-12 ">
+        <h1 className="md:text-6xl  text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
@@ -34,9 +34,9 @@ const TopSlider = () => {
          </div>
          <div>
              <img src={img2} />
-             <div className="absolute h-full flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="space-y-7 w-1/2 pl-12">
-        <h1 className="text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
+             <div className="absolute h-full md:h-[750px] flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="md:space-y-7 md:w-1/2 md:pl-12">
+        <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
@@ -48,9 +48,9 @@ const TopSlider = () => {
          </div>
          <div>
              <img src={img3} />
-             <div className="absolute h-full flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="space-y-7 w-1/2 pl-12">
-        <h1 className="text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
+             <div className="absolute h-full md:h-[640px] flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="md:space-y-7 md:w-1/2 md:pl-12">
+        <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
@@ -62,9 +62,9 @@ const TopSlider = () => {
          </div>
          <div>
              <img src={img4} />
-             <div className="absolute h-full flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="space-y-7 w-1/2 pl-12">
-        <h1 className="text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
+             <div className="absolute h-full md:h-[750px] flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+        <div className="md:space-y-7 md:w-1/2 md:pl-12">
+        <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
@@ -77,8 +77,8 @@ const TopSlider = () => {
          <div>
              <img src={img5} />
              <div className="absolute h-full flex items-center  rounded-xl   left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-        <div className="space-y-7 w-1/2 pl-12">
-        <h1 className="text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
+        <div className="md:space-y-7 md:w-1/2 md:pl-12">
+        <h1 className="md:text-6xl text-white font-bold">Welcome To Our Sports Trainig Camp</h1>
           <p className="font-bold text-white">We Provide you a great training in different Sports</p>
         <div>
         <button className="btn btn-primary mr-5">Discover More</button>
