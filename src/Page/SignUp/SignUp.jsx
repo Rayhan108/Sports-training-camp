@@ -7,7 +7,7 @@ import useAuth from "../../hooks/useAuth";
 import { storeUserInDB } from "../../Component/Utilities/utilities";
 import { TbFidgetSpinner } from "react-icons/tb";
 const SignUp = () => {
-  const {createUser,updateUserData,loader}=useAuth()
+  const {createUser,updateUserData,loader,setLoader}=useAuth()
     const [confirmPassword, setConfirmPassword] = useState('');
     
 const [confirmPasswordError, setConfirmPasswordError] = useState('');
@@ -37,14 +37,17 @@ const handleConfirmPasswordChange = (e) => {
           createUser(data.email,data.password)
           .then(result=>{
             const loggedUser=result.user;
-            updateUserData(loggedUser,loggedUser.displaName,loggedUser.photoURL)
+            console.log(loggedUser);
+            updateUserData(result.user,data.name,data.photoURL)
             navigate(from, { replace: true })
             reset()
+            setLoader(false)
           toast.success('Registration Success')
           const user = {name:data.name,email:data.email}
           storeUserInDB(user);
         })
         .catch(error=>{
+          setLoader(false)
             toast.error(error.message)
         
           })
