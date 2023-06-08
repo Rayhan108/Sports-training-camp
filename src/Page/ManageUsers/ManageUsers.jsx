@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import ManageUsersTable from "./ManageUsersTable";
+import { toast } from "react-hot-toast";
 
 
 const ManageUsers = () => {
@@ -8,6 +9,23 @@ const ManageUsers = () => {
         const res = await fetch("http://localhost:5000/allUsers");
         return res.json();
       });
+      const handleMakeAdmin = (user) => {
+        fetch(
+          `http://localhost:5000/admin/${user._id}`,
+          {
+            method: "PATCH",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+            if (data.modifiedCount) {
+              refetch();
+               
+              toast.success(`${user.name} is an Admin Now!`)
+            }
+          });
+      };
     return (
         <div>
             <h1 className="text-2xl text-center mb-5 font-bold">ALL USERS : {allUsers.length}</h1>
@@ -25,7 +43,7 @@ const ManageUsers = () => {
     </thead>
     <tbody>
     {
-    allUsers.map((user,idx)=><ManageUsersTable key={user?._id} user={user} idx={idx}></ManageUsersTable>)
+    allUsers.map((user,idx)=><ManageUsersTable key={user?._id} user={user} idx={idx} handleMakeAdmin={handleMakeAdmin}></ManageUsersTable>)
 }
    
     </tbody>
