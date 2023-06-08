@@ -22,7 +22,7 @@ const Navbar = () => {
         </>
       );
     return (
-        <div className="navbar  w-full bg-base-300  shadow-sm ">
+        <div className="navbar fixed z-10  w-full bg-base-300  shadow-sm  ">
 
 
   <div className="navbar-start ">
