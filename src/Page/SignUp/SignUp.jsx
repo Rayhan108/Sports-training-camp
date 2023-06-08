@@ -5,8 +5,10 @@ import { useState } from "react";
 import toast from 'react-hot-toast'
 import useAuth from "../../hooks/useAuth";
 import { storeUserInDB } from "../../Component/Utilities/utilities";
+import { TbFidgetSpinner } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 const SignUp = () => {
-  const {createUser,updateUserData}=useAuth()
+  const {createUser,updateUserData,loader,setLoader}=useAuth()
     const [confirmPassword, setConfirmPassword] = useState('');
     
 const [confirmPasswordError, setConfirmPasswordError] = useState('');
@@ -39,17 +41,23 @@ const handleConfirmPasswordChange = (e) => {
             updateUserData(loggedUser,loggedUser.displaName,loggedUser.photoURL)
             navigate(from, { replace: true })
             reset()
+            setLoader(false)
           toast.success('Registration Success')
           storeUserInDB(loggedUser);
         })
         .catch(error=>{
+          setLoader(false)
             toast.error(error.message)
         
           })
     
     };
   return (
-    <div className="flex pt-[150px] items-center justify-center min-h-screen bg-gray-100 ">
+    <>
+    <Helmet>
+    <title>Sports Training Camp| SignUp</title>
+    </Helmet>
+    <div className="flex pt-[150px] items-center justify-center min-h-screen bg-gray-200 ">
       <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
           Sign Up
@@ -141,9 +149,9 @@ const handleConfirmPasswordChange = (e) => {
     onChange={handleConfirmPasswordChange}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
             />
-                {/* {errors.password && (
+                {errors.password && (
                   <span className="text-red-600">This field is required</span>
-                )} */}
+                )}
                     {confirmPasswordError && (
               <span className="text-red-600">{confirmPasswordError}</span>
             )}
@@ -153,7 +161,11 @@ const handleConfirmPasswordChange = (e) => {
             type="submit"
             className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600  "
           >
-            SignUp
+           {
+              loader?<TbFidgetSpinner  className='m-auto animate-spin' size={24}></TbFidgetSpinner>
+              :
+              'SignUp'
+            }
           </button>
           <p className="mt-5 text-center">
             Already Have an Account?{" "}
@@ -165,6 +177,7 @@ const handleConfirmPasswordChange = (e) => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {AiFillEyeInvisible} from "react-icons/ai"
-import SocialLogin from "../../../../Component/Shared/SocialLogin/SocialLogin";
-import useAuth from "../../../../hooks/useAuth";
+import { TbFidgetSpinner } from 'react-icons/tb'
+import SocialLogin from "../../Component/Shared/SocialLogin/SocialLogin";
+import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
   const [isShow,setISShow]= useState(false)
-  const {SignIn}=useAuth()
+  const {SignIn,loader,setLoader}=useAuth()
 
   const location =useLocation()
   const navigate = useNavigate()
@@ -26,17 +28,25 @@ const Login = () => {
         console.log(result);
         navigate(from)
         reset();
+        setLoader(false)
      toast.success('login successfull')
       })
       .catch((error) => {
         // console.log(error.message);
+        setLoader(false)
        toast.error(error.message);
+       
       });
       
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
+  <>
+  <Helmet>
+  <title>Sports Training Camp| Login</title>
+  </Helmet>
+  <div className="flex items-center justify-center min-h-screen bg-gray-200 ">
+      
       <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
           Login
@@ -85,7 +95,12 @@ const Login = () => {
             type="submit"
             className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600  "
           >
-            Login
+            {
+              loader?<TbFidgetSpinner  className='m-auto animate-spin' size={24}></TbFidgetSpinner>
+              :
+              'Login'
+            }
+            
           </button>
           <p className="mt-5 text-center">
             Do not Have Account?{" "}
@@ -97,6 +112,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+  </>
   );
 };
 

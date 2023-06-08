@@ -24,7 +24,7 @@ const Footer = () => {
     </div>
          
           <div className="text-center py-3 text-black bg-base-300 text-sm">
-            <p>&copy; {new Date().getFullYear()} Sports Education Camp. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Sports Training Camp. All rights reserved.</p>
           </div>
       </footer>
     );

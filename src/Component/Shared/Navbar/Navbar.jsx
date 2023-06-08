@@ -2,8 +2,12 @@
 import { Link } from "react-router-dom";
 
 import logo from "../../../assets/Orange blue football sport logo.png"
+import useAuth from "../../../hooks/useAuth";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
+  const {user,logout}=useAuth();
+  
     const navRoutes = (
         <>
           <li>
@@ -21,6 +25,15 @@ const Navbar = () => {
           
         </>
       );
+      const handleLogOut = () => {
+        logout()
+          .then(()=>{
+            toast.success('Logout Success')
+          })
+          .catch((error) => {
+            toast.error(error.message);
+          });
+      };
     return (
         <div className="navbar fixed z-10  w-full bg-base-300  shadow-sm  ">
 
@@ -62,9 +75,9 @@ const Navbar = () => {
             alt=""
           />
      
-          <h4  className=" normal-case text-center text-xl font-extrabold mt-0">Sports Training Camp</h4>
         </div>
         </Link>
+          <h4  className=" normal-case text-center text-xl font-extrabold mt-0">Sports Training Camp</h4>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -72,14 +85,16 @@ const Navbar = () => {
         </ul>
       </div>
     
+           
       <div className="navbar-end text-right">
       <label className=" mr-5">
-      
-            <img style={{width:"50px"}} className="w-50 rounded-full circle" src={logo}  />
+            {user&& <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+            <img style={{width:"50px"}} className="w-50 rounded-full circle" src={user?.photoURL} />
+          </div>}
         
         </label>
-     
-          <Link to="/login" className="btn">Login</Link>
+        {user? <button onClick={handleLogOut} className="btn">LogOut</button>
+         : <Link to="/login" className="btn">Login</Link>}
       </div>
 
  

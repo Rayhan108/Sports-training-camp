@@ -4,9 +4,10 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { storeUserInDB } from "../../Utilities/utilities";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 const SocialLogin = () => {
-  const {googleSignIn}=useAuth();
+  const {googleSignIn,loader,setLoader}=useAuth();
   const provider = new GoogleAuthProvider();
   const location =useLocation()
 const navigate = useNavigate()
@@ -21,9 +22,11 @@ const handleGoogleLogin = () => {
       navigate(from)
       
       storeUserInDB(result.user);
+      setLoader(false)
      toast.success('Login Successfull')
     })
     .catch((error) => {
+      setLoader(false)
       toast.error(error.message);
     });
 };
@@ -32,7 +35,14 @@ const handleGoogleLogin = () => {
       <div className="divider"></div>
       <button   onClick={handleGoogleLogin} className="btn btn-outline btn-info">
 
-        <FaGoogle></FaGoogle>Sign Up With Google
+        <FaGoogle></FaGoogle>
+        {
+              loader?<TbFidgetSpinner  className='m-auto animate-spin' size={24}></TbFidgetSpinner>
+              :
+              ' Sign Up With Google'
+            }
+        
+       
       </button>
     </div>
   );
