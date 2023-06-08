@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .drawer-side a.active{
-    color: white;
+    color: rgb(227, 81, 195);
 }
 .drawer-side a{
     background-color:transparent;

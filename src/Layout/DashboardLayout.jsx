@@ -4,8 +4,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 
 const DashboardLayout = () => {
-const isAdmin =false;
-const isInstructor =true;
+const isAdmin =true;
+const isInstructor =false;
     return (
         <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -27,7 +27,7 @@ const isInstructor =true;
                 <NavLink to="manageClass">Manage Classes</NavLink>
               </li>
               <li>
-                <NavLink to="manageInstructor">Manage Instructors</NavLink>
+                <NavLink to="manageUsers">Manage Users</NavLink>
               </li>
             </>
           )}
