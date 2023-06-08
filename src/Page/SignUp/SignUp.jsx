@@ -57,7 +57,7 @@ const handleConfirmPasswordChange = (e) => {
     <Helmet>
     <title>Sports Training Camp| SignUp</title>
     </Helmet>
-    <div className="flex pt-[150px] items-center justify-center min-h-screen bg-gray-200 ">
+    <div className="flex  items-center justify-center min-h-screen bg-gray-200 ">
       <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
           Sign Up

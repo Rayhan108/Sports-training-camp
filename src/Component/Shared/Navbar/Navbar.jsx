@@ -35,7 +35,7 @@ const Navbar = () => {
           });
       };
     return (
-        <div className="navbar fixed z-10  w-full bg-base-300  shadow-sm  ">
+        <div className="navbar  w-full bg-base-300  shadow-sm  ">
 
 
   <div className="navbar-start ">
@@ -69,7 +69,7 @@ const Navbar = () => {
        
        <div>
     
-        <img className="ml-12"
+        <img className="mr-3"
             style={{ width: "50px" }}
             src={logo}
             alt=""

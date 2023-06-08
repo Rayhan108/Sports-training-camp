@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+// import TopSlider from "../TopSlider/TopSlider";
 
 
 const Home = () => {
@@ -7,8 +8,8 @@ const Home = () => {
          <Helmet>
     <title>Sports Training Camp| Home</title>
     </Helmet>
-        <div className="pt-[150px]">
-            <h3>test</h3>
+        <div className="">
+           {/* <TopSlider></TopSlider> */}
         </div>
         </>
     );
