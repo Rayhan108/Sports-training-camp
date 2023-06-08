@@ -20,7 +20,7 @@ const Navbar = () => {
            <li> <Link to="" className=" font-bold">Classes</Link>
           </li>
           <li>
-            <Link to="/dashboard/enrolledClass" className=" font-bold">Dashboard</Link>
+            <Link to="dashboard" className=" font-bold">Dashboard</Link>
           </li> 
           
         </>
