@@ -17,7 +17,7 @@ const ManageClasses = () => {
   });
     return (
         <div>
-            <SectionTitle header={"My classes"}></SectionTitle>
+            <SectionTitle header={"Manage classes"}></SectionTitle>
         <div className="overflow-x-auto">
           <table className="table text-center">
             {/* head */}

@@ -13,6 +13,8 @@ import ManageUsers from "../../Page/Dashboard/ManageUsers/ManageUsers";
 import Dashboard from "../../Page/Dashboard/Dashboard/Dashboard";
 import Addclass from "../../Page/Dashboard/AddClass/Addclass";
 import Instructors from "../../Page/Instructors/Instructors";
+import AdminRoutes from "../AdminRoutes/AdminRoutes";
+import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
     ],
   },
   {  path:"dashboard",
-  element:<DashboardLayout></DashboardLayout>,
+  element:<PrivetRoute><DashboardLayout></DashboardLayout></PrivetRoute>,
   children:[
     {
       path:'/dashboard',
@@ -59,11 +61,11 @@ const router = createBrowserRouter([
     },
     {
       path:'manageClass',
-      element:<ManageClasses></ManageClasses>
+      element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
     },
     {
       path:'manageUsers',
-      element:<ManageUsers></ManageUsers>
+      element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
     },
     {
       path:'addClass',
