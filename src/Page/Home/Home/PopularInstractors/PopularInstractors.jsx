@@ -19,7 +19,10 @@ console.log(instructors);
    
     return (
         <div>
-            <SectionTitle header="Popular Instructors "></SectionTitle>
+                <SectionTitle header="Popular Instructors "></SectionTitle>
+            
+
+          
         </div>
     );
 };
