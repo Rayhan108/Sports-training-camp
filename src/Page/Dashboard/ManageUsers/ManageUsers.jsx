@@ -51,6 +51,7 @@ const ManageUsers = () => {
     <thead className=" text-xl font-bold">
       <tr>
         <th>#</th>
+        <th>Photo</th>
         <th>Name</th>
         <th>Email</th>
         <th>Instructor</th>

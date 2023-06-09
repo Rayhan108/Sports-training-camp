@@ -9,7 +9,8 @@ import EnrolledClasses from "../../Page/Dashboard/EnrolledClasses/EnrolledClasse
 import MyClasses from "../../Page/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../../Page/Dashboard/ManageClasses/ManageClasses";
 
-import ManageUsers from "../../Page/ManageUsers/ManageUsers";
+import ManageUsers from "../../Page/Dashboard/ManageUsers/ManageUsers";
+import Dashboard from "../../Page/Dashboard/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {  path:"dashboard",
   element:<DashboardLayout></DashboardLayout>,
   children:[
+    {
+      path:'/dashboard',
+      element:<Dashboard></Dashboard>
+    },
     {
       path:'enrolledClass',
       element:<EnrolledClasses></EnrolledClasses>

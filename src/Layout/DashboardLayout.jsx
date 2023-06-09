@@ -23,9 +23,6 @@ const [isAdmin] = useAdmin()
     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content font-bold">
       {/* Sidebar content here */}
 
-      <li>
-                <NavLink to="/dashboard">Dashboard</NavLink>
-              </li>
       {isAdmin && (
             <>
               <li>

@@ -43,7 +43,7 @@ const handleConfirmPasswordChange = (e) => {
             reset()
             setLoader(false)
           toast.success('Registration Success')
-          const user = {name:data.name,email:data.email}
+          const user = {name:data.name,email:data.email,photo:data.photoURL}
           storeUserInDB(user);
         })
         .catch(error=>{
