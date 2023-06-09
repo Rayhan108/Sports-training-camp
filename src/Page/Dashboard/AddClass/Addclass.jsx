@@ -1,32 +1,46 @@
- import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 import useAuth from "../../../hooks/useAuth";
 import { TbFidgetSpinner } from "react-icons/tb";
-const token = import.meta.env.VITE_photo_upload_token;
+
+import { toast } from "react-hot-toast";
+// const token = import.meta.env.VITE_photo_upload_token;
 
 const Addclass = () => {
   const { user, loader } = useAuth();
-  const img_url = `https://api.imgbb.com/1/upload?&key=${token}`
+
+  //   const img_url = `https://api.imgbb.com/1/upload?&key=${token}`
   console.log(user);
   const {
     register,
     handleSubmit,
-    //reset,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-      console.log(data);
-    const formData = new FormData();
-    formData.append('classImage', data.classImg[0])
-    fetch(img_url, {
-        method: 'POST',
-        body: formData
+   
+    const price = Number(data.price);
+    data.price = price;
+    const seats = Number(data.seats)
+    data.seats=seats;
+    data = {...data,status:'pending'}
+    console.log(data);
+ 
+    fetch("http://localhost:5000/class", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(imgRes => {
-        console.log(imgRes);
-      
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          reset();
+          toast.success("New Class Added");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   return (
@@ -53,8 +67,13 @@ const Addclass = () => {
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Class Image<span className="text-warning">*</span>
             </label>
-           
-            <input {...register("classImg", { required: true })} type="file" className="file-input file-input-bordered file-input-gray w-full " />
+            <input
+              type="url"
+              {...register("classImg", { required: true })}
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+            />
+            {/* <input {...register("classImg", { required: true })} type="file" className="file-input file-input-bordered file-input-gray w-full " /> */}
+
             {errors.classImg && (
               <span className="text-red-600"> Class name is required</span>
             )}

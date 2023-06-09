@@ -2,7 +2,7 @@
 
 const Dashboard = () => {
     return (
-        <div className="stats shadow">
+        <div className="stats shadow mt-64 flex justify-center items-center">
   
         <div className="stat">
           <div className="stat-figure text-primary">
