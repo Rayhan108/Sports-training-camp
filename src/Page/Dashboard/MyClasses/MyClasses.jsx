@@ -15,14 +15,14 @@ const MyClasses = () => {
       return res.data;
     },
   });
-  console.log(classes);
+//   console.log(classes);
   return (
     <div>
       <SectionTitle header={"My classes"}></SectionTitle>
       <div className="overflow-x-auto">
         <table className="table text-center">
           {/* head */}
-          <thead >
+          <thead  className="font-bold text-xl">
             <tr>
               <th>
                #
