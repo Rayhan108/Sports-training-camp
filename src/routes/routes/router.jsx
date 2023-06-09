@@ -69,6 +69,10 @@ const router = createBrowserRouter([
       path:'addClass',
       element:<Addclass></Addclass>
     },
+    {
+      path:'myClass',
+      element:<MyClasses></MyClasses>
+    },
   
 
 
