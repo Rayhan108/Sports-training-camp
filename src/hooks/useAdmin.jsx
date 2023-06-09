@@ -7,7 +7,7 @@ const useAdmin = () => {
     const {user, loader} = useAuth();
   
    
-    const {data: isAdmin} = useQuery({
+    const {data: isAdmin,isLoading} = useQuery({
         queryKey: ['isAdmin', user?.email],
         enabled: !loader,
         queryFn: async () => {
@@ -15,6 +15,6 @@ const useAdmin = () => {
             return res.data.admin;
         }
     })
-    return [isAdmin]
+    return [isAdmin,isLoading]
 }
 export default useAdmin;

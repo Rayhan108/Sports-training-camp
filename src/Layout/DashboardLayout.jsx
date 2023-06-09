@@ -7,12 +7,18 @@ import useInstractor from "../hooks/useInstractor";
 
 const DashboardLayout = () => {
 // const isAdmin =true;
-const [isInstructor] = useInstractor()
-const [isAdmin] = useAdmin()
+const [isInstructor] = useInstractor();
+const [isAdmin,isLoading] = useAdmin();
+
+if(isLoading){
+  return <div className="flex md:mt-64 items-center justify-center ">
+    <div className="radial-progress animate-spin" style={{"--value":70}}>70%</div>
+  </div>
+}
     return (
         <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center">
+  <div className="drawer-content flex flex-col  ">
     {/* Page content here */}
     <Outlet></Outlet>
     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
