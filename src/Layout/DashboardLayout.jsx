@@ -68,10 +68,10 @@ if(isLoading){
         
        <div className="divider"></div>
          <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-             <li><NavLink to="/"><SiInstructure></SiInstructure> Instractors</NavLink></li>
-             <li><NavLink to="/"><SiGoogleclassroom></SiGoogleclassroom> Classes</NavLink></li>
+             <li><NavLink to="/instructors"><SiInstructure></SiInstructure> Instractors</NavLink></li>
+             <li><NavLink to="/classes"><SiGoogleclassroom></SiGoogleclassroom> Classes</NavLink></li>
     
-                    
+             
     </ul>
   
   </div>
