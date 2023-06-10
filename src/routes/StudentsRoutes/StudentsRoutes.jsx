@@ -1,13 +1,15 @@
 import { Navigate} from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 import useAuth from "../../hooks/useAuth";
 import useInstractor from "../../hooks/useInstractor";
 import { toast } from "react-hot-toast";
 
-const InstructorsRoutes = ({ children }) => {
+const StudentsRoutes = ({ children }) => {
   const { user, loading } = useAuth();
-  const [isInstractor, isInstructorLoading] = useInstractor();
- 
-  if (loading || isInstructorLoading) {
+  const { isAdmin, isLoading } = useAdmin();
+  const { isInstractor, isInstructorLoading } = useInstractor();
+
+  if (loading || isLoading || isInstructorLoading) {
     return (
       <div className="flex md:mt-64 items-center justify-center ">
         <div className="radial-progress animate-spin" style={{ "--value": 70 }}>
@@ -16,12 +18,14 @@ const InstructorsRoutes = ({ children }) => {
       </div>
     );
   }
-  if (user && isInstractor) {
+
+  if (user && !isInstractor && !isAdmin) {
     return children;
   }else{
-    toast.error("You Are Not Instructors")
+    toast.error("You Are Not Student")
   }
+
   return <Navigate to="/" ></Navigate>;
 };
 
-export default InstructorsRoutes;
+export default StudentsRoutes;

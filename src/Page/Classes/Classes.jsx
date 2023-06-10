@@ -33,9 +33,11 @@ const Classes = () => {
             title: 'error!',
             text: 'You have to log in first to select this',
             icon: 'error',
-            confirmButtonText: 'Ok'
+            confirmButtonText: 'Ok',
+           
           })
-    }
+          return
+        }
     const data ={id:id,selectBy:user?.email} ;
     // console.log(data);
     fetch(`http://localhost:5000/selectedClass`, {
