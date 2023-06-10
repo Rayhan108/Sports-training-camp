@@ -18,6 +18,7 @@ import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 import Classes from "../../Page/Classes/Classes";
 import SelectedClass from "../../Page/Dashboard/Dashboard/SelectedClass/SelectedClass";
 import UpdateClass from "../../Page/Dashboard/MyClasses/UpdateClass";
+import InstructorsRoutes from "../InstructorsRoutes/InstructorsRoutes";
 
 const router = createBrowserRouter([
   {
@@ -76,11 +77,11 @@ const router = createBrowserRouter([
     },
     {
       path:'addClass',
-      element:<Addclass></Addclass>
+      element:<InstructorsRoutes><Addclass></Addclass></InstructorsRoutes>
     },
     {
       path:'myClass',
-      element:<MyClasses></MyClasses>
+      element:<InstructorsRoutes><MyClasses></MyClasses></InstructorsRoutes>
     },
     {
       path:'update/:id',

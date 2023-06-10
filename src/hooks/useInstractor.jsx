@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useInstractor = () => {
     const {user,loader}=useAuth();
-    const {data:isInstractor}=useQuery({
+    const {data:isInstractor,isInstructorLoading}=useQuery({
         queryKey:['isInstructor',user?.email],
         enabled:!loader,
         queryFn:async ()=>{
@@ -12,7 +12,7 @@ const useInstractor = () => {
             return res.data.instructor;
         }
     })
-    return [isInstractor]
+    return [isInstractor,isInstructorLoading]
 };
 
 export default useInstractor;
