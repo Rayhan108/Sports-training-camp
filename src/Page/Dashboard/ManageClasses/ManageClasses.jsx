@@ -24,7 +24,7 @@ const ManageClasses = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data.modifiedCount){
             toast.success(`Approve Success!`)
             refetch()

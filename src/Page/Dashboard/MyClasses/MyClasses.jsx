@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
 
 const MyClasses = () => {
   const { user } = useAuth();
@@ -15,7 +16,8 @@ const MyClasses = () => {
       return res.data;
     },
   });
-//   console.log(classes);
+
+
   return (
     <div>
       <SectionTitle header={"My classes"}></SectionTitle>
@@ -67,10 +69,12 @@ const MyClasses = () => {
                 <td className="text-right">00</td>
                 <td>{eachClass?.status}</td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">Update</button>
+                  <Link to={`/dashboard/update/${eachClass?._id}`}>
+                  <button  className="btn btn-ghost ">Update</button>
+                  </Link>
                 </th>
                 <th>
-                  <button className="btn btn-ghost btn-xs">Feedback</button>
+                  <button className="btn btn-ghost ">Feedback</button>
                 </th>
               </tr>
             ))}

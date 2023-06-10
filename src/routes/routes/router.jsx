@@ -17,6 +17,7 @@ import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 import Classes from "../../Page/Classes/Classes";
 import SelectedClass from "../../Page/Dashboard/Dashboard/SelectedClass/SelectedClass";
+import UpdateClass from "../../Page/Dashboard/MyClasses/UpdateClass";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,11 @@ const router = createBrowserRouter([
     {
       path:'myClass',
       element:<MyClasses></MyClasses>
+    },
+    {
+      path:'update/:id',
+      element:<UpdateClass></UpdateClass>,
+      // loader:({params})=>fetch(`http://localhost:5000/class/${params.id}`)
     },
   
 
