@@ -36,7 +36,8 @@ const Classes = () => {
             confirmButtonText: 'Ok'
           })
     }
-    const data ={id:id,selectBy:user?.email} 
+    const data ={id:id,selectBy:user?.email} ;
+    // console.log(data);
     fetch(`http://localhost:5000/selectedClass`, {
         method: "POST",
         headers: {

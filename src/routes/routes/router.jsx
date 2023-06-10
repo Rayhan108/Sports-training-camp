@@ -16,6 +16,7 @@ import Instructors from "../../Page/Instructors/Instructors";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import PrivetRoute from "../PrivetRoutes/PrivetRoute";
 import Classes from "../../Page/Classes/Classes";
+import SelectedClass from "../../Page/Dashboard/Dashboard/SelectedClass/SelectedClass";
 
 const router = createBrowserRouter([
   {
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
     },
     {
       path:'mySelectedClass',
-      element:<MyClasses></MyClasses>
+      element:<SelectedClass></SelectedClass>
     },
     {
       path:'manageClass',

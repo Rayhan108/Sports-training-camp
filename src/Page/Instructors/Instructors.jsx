@@ -19,7 +19,7 @@ const {data:instructors=[]}=useQuery({
       <Container>
   <div className="overflow-x-auto">
               <SectionTitle header="All Instructors "></SectionTitle>
-        <table className="table ">
+        <table className="table text-center ">
           {/* head */}
           <thead className=" text-xl font-bold">
             <tr>

@@ -1,6 +1,7 @@
 
 
 const EnrolledClasses = () => {
+   
     return (
         <div>
             <h3>my enrlled class</h3>
