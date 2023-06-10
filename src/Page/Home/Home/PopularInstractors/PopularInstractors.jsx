@@ -3,6 +3,7 @@ import useAuth from "../../../../hooks/useAuth";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import PopularInstructorCard from "./PopularInstructorCard";
+import Container from "../../../../Component/Container/Container";
 
 const PopularInstractors = () => {
   const { user } = useAuth();
@@ -15,19 +16,22 @@ const PopularInstractors = () => {
     },
   });
 
-  console.log(instructors);
+  // console.log(instructors);
 
   return (
     <div>
       <SectionTitle header="Popular Instructors "></SectionTitle>
-      <div className="grid md:grid-cols-3 gap-10">
+   <Container>
+   <div className="grid md:grid-cols-3 gap-10">
         {instructors.slice(0, 6).map((instructor) => (
           <PopularInstructorCard
-            key={instructor?.key}
+            key={instructor?._id}
             instructor={instructor}
           ></PopularInstructorCard>
         ))}
       </div>
+
+   </Container>
     </div>
   );
 };

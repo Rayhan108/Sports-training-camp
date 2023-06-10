@@ -15,6 +15,7 @@ import Addclass from "../../Page/Dashboard/AddClass/Addclass";
 import Instructors from "../../Page/Instructors/Instructors";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import PrivetRoute from "../PrivetRoutes/PrivetRoute";
+import Classes from "../../Page/Classes/Classes";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/instructors",
         element:<Instructors></Instructors>,
+      },
+      {
+        path: "/classes",
+        element:<Classes></Classes>,
       },
       {
         path: "/login",
