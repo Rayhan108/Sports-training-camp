@@ -87,7 +87,7 @@ const router = createBrowserRouter([
     {
       path:'update/:id',
       element:<UpdateClass></UpdateClass>,
-      // loader:({params})=>fetch(`http://localhost:5000/class/${params.id}`)
+      // loader:({params})=>fetch(`https://assignment12-server-rayhan108.vercel.app/class/${params.id}`)
     },
   
 

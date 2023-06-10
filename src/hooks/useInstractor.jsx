@@ -8,7 +8,7 @@ const useInstractor = () => {
         queryKey:['isInstructor',user?.email],
         enabled:!loader,
         queryFn:async ()=>{
-            const res=await axios.get(`http://localhost:5000/users/instractor/${user.email}`)
+            const res=await axios.get(`https://assignment12-server-rayhan108.vercel.app/users/instractor/${user.email}`)
             return res.data.instructor;
         }
     })

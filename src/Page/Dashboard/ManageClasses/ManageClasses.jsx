@@ -12,14 +12,14 @@ const ManageClasses = () => {
     queryKey: ["classes", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/allClasses`
+        `https://assignment12-server-rayhan108.vercel.app/allClasses`
       );
       return res.data;
     },
   });
   const handleApproved=(id)=>{
 
-    fetch(`http://localhost:5000/approvedClass/${id}`,{
+    fetch(`https://assignment12-server-rayhan108.vercel.app/approvedClass/${id}`,{
       method:'PATCH',
     })
     .then(res=>res.json())
@@ -34,7 +34,7 @@ const ManageClasses = () => {
   }
   const handleDenied=(id)=>{
 
-    fetch(`http://localhost:5000/deniedClass/${id}`,{
+    fetch(`https://assignment12-server-rayhan108.vercel.app/deniedClass/${id}`,{
       method:'PATCH',
     })
     .then(res=>res.json())

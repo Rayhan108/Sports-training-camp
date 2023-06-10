@@ -3,7 +3,7 @@ export const storeUserInDB = user => {
   // console.log(user.email);
    
   
-    fetch('http://localhost:5000/users', {
+    fetch('https://assignment12-server-rayhan108.vercel.app/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

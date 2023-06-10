@@ -12,7 +12,7 @@ const SelectedClass = () => {
       queryKey: ["myEnrolledClasses", user?.email],
       queryFn: async () => {
         const res = await axios.get(
-          `http://localhost:5000/mySelectedClass/${user?.email}`
+          `https://assignment12-server-rayhan108.vercel.app/mySelectedClass/${user?.email}`
         );
         return res.data;
       },
@@ -28,7 +28,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectClass/${id}`, {
+                fetch(`https://assignment12-server-rayhan108.vercel.app/selectClass/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

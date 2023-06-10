@@ -6,13 +6,13 @@ import { toast } from "react-hot-toast";
 const ManageUsers = () => {
     const { data: allUsers = [], refetch } = useQuery(["allUsers"], async () => {
     
-        const res = await fetch("http://localhost:5000/allUsers");
+        const res = await fetch("https://assignment12-server-rayhan108.vercel.app/allUsers");
         return res.json();
       });
     //   make admin
       const handleMakeAdmin = (user) => {
         fetch(
-          `http://localhost:5000/admin/${user._id}`,
+          `https://assignment12-server-rayhan108.vercel.app/admin/${user._id}`,
           {
             method: "PATCH",
           }
@@ -29,7 +29,7 @@ const ManageUsers = () => {
       };
     //   make instructor
     const handlemakeInstructor =(user)=>{
-        fetch( `http://localhost:5000/instructor/${user._id}`,{
+        fetch( `https://assignment12-server-rayhan108.vercel.app/instructor/${user._id}`,{
             method:"PATCH",
         })
         .then(res=>res.json())

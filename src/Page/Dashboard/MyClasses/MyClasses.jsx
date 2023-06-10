@@ -11,7 +11,7 @@ const MyClasses = () => {
     queryKey: ["classes", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/clases/${user?.email}`
+        `https://assignment12-server-rayhan108.vercel.app/clases/${user?.email}`
       );
       return res.data;
     },
