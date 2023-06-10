@@ -98,10 +98,10 @@ const ManageClasses = () => {
                   
                   <td>{eachClass?.status}</td>
                   <th>
-                    <button disabled={eachClass?.status === 'approved'} onClick={()=>handleApproved(eachClass?._id)} className="btn btn-ghost ">Approve </button>
+                    <button disabled={eachClass?.status === 'approved'||eachClass?.status === 'denied'} onClick={()=>handleApproved(eachClass?._id)} className="btn btn-ghost ">Approve </button>
                   </th>
                   <th>
-                    <button disabled={eachClass?.status === 'denied'} onClick={()=>handleDenied(eachClass?._id)} className="btn btn-ghost">Denied</button>
+                    <button disabled={eachClass?.status === 'denied'||eachClass?.status === 'approved'} onClick={()=>handleDenied(eachClass?._id)} className="btn btn-ghost">Denied</button>
                   </th>
                   <th>
                     <button className="btn btn-ghost ">Feedback</button>

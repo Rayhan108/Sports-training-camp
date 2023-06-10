@@ -1,4 +1,9 @@
 import { FaHome } from "react-icons/fa";
+import { MdOutlineClass,MdOutlineHotelClass } from "react-icons/md";
+import { GiClassicalKnowledge } from "react-icons/gi";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { SiInstructure,SiGoogleclassroom } from "react-icons/si";
+
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useInstractor from "../hooks/useInstractor";
@@ -32,38 +37,39 @@ if(isLoading){
       {isAdmin && (
             <>
               <li>
-                <NavLink to="manageClass">Manage Classes</NavLink>
+                <NavLink to="manageClass"><MdOutlineClass></MdOutlineClass> Manage Classes</NavLink>
               </li>
               <li>
-                <NavLink to="manageUsers">Manage Users</NavLink>
+                <NavLink to="manageUsers"><AiOutlineUsergroupAdd></AiOutlineUsergroupAdd> Manage Users</NavLink>
               </li>
             </>
           )}
           {isInstructor && (
             <>
               <li>
-                <NavLink to="myClass">My Classes</NavLink>
+                <NavLink to="myClass">
+                  My Classes</NavLink>
               </li>
               <li>
-                <NavLink to="addClass">Add A Class</NavLink>
+                <NavLink to="addClass"><GiClassicalKnowledge></GiClassicalKnowledge> Add A Class</NavLink>
               </li>
             </>
           )}
           {!isAdmin && !isInstructor && (
             <>
               <li>
-                <NavLink to="mySelectedClass">My Selected Classes</NavLink>
+                <NavLink to="mySelectedClass"><MdOutlineHotelClass></MdOutlineHotelClass> My Selected Classes</NavLink>
               </li>
               <li>
-                <NavLink to="enrolledClass">My Enrolled Classes</NavLink>
+                <NavLink to="enrolledClass"><GiClassicalKnowledge></GiClassicalKnowledge> My Enrolled Classes</NavLink>
               </li>
             </>
           )}
         
        <div className="divider"></div>
          <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-             <li><NavLink to="/"> Instractors</NavLink></li>
-             <li><NavLink to="/">Classes</NavLink></li>
+             <li><NavLink to="/"><SiInstructure></SiInstructure> Instractors</NavLink></li>
+             <li><NavLink to="/"><SiGoogleclassroom></SiGoogleclassroom> Classes</NavLink></li>
     
                     
     </ul>

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 import useAuth from "../../../hooks/useAuth";
-import { TbFidgetSpinner } from "react-icons/tb";
+import { ImSpinner9 } from "react-icons/im";
 
 import { toast } from "react-hot-toast";
 // const token = import.meta.env.VITE_photo_upload_token;
@@ -134,10 +134,10 @@ const Addclass = () => {
             className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600  "
           >
             {loader ? (
-              <TbFidgetSpinner
+              <ImSpinner9
                 className="m-auto animate-spin"
                 size={24}
-              ></TbFidgetSpinner>
+              ></ImSpinner9>
             ) : (
               "Add Class"
             )}

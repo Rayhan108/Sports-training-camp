@@ -31,7 +31,7 @@ const UpdateClass = () => {
       } = useForm();
       const location =useLocation()
       const navigate = useNavigate()
-      const from = location.state?.from?.pathname || "/myClass";
+      const from = location.state?.from?.pathname || "/dashboard/myClass";
       const onSubmit = data => {
        
         const price = Number(data.price);
@@ -39,8 +39,8 @@ const UpdateClass = () => {
         const seats = Number(data.seats)
         data.seats=seats;
        
-        console.log(data);
-        fetch(`http://localhost:5000/updateClass`,
+        // console.log(data);
+        fetch(`http://localhost:5000/updateClass/${id}`,
         {
             method: "PATCH",
       headers: {

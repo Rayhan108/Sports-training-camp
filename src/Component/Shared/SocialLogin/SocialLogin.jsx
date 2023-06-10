@@ -4,7 +4,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { storeUserInDB } from "../../Utilities/utilities";
-import { TbFidgetSpinner } from "react-icons/tb";
+import { ImSpinner9 } from "react-icons/im";
 
 const SocialLogin = () => {
   const {googleSignIn,loader,setLoader}=useAuth();
@@ -37,7 +37,7 @@ const handleGoogleLogin = () => {
 
         <FaGoogle></FaGoogle>
         {
-              loader?<TbFidgetSpinner  className='m-auto animate-spin' size={24}></TbFidgetSpinner>
+              loader?<ImSpinner9  className='m-auto animate-spin' size={24}></ImSpinner9>
               :
               ' Sign Up With Google'
             }

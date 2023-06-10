@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {AiFillEyeInvisible} from "react-icons/ai"
-import { TbFidgetSpinner } from 'react-icons/tb'
+import { ImSpinner9 } from 'react-icons/im'
 import SocialLogin from "../../Component/Shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
@@ -22,10 +22,10 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = data => {
-      console.log(data)
+      // console.log(data)
       SignIn(data.email,data.password)
       .then(result=>{
-        console.log(result);
+        // console.log(result);
         navigate(from)
         reset();
         setLoader(false)
@@ -96,7 +96,7 @@ const Login = () => {
             className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600  "
           >
             {
-              loader?<TbFidgetSpinner  className='m-auto animate-spin' size={24}></TbFidgetSpinner>
+              loader?<ImSpinner9  className='m-auto animate-spin' size={24}></ImSpinner9>
               :
               'Login'
             }

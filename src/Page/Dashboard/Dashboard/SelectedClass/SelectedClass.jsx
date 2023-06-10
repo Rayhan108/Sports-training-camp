@@ -45,7 +45,7 @@ const SelectedClass = () => {
             }
         })
     }
-    console.log(mySelectedClasses);
+    // console.log(mySelectedClasses);
     return (
         <div>
         <SectionTitle header={"My selected classes"}></SectionTitle>

@@ -5,7 +5,7 @@ import { useState } from "react";
 import toast from 'react-hot-toast'
 import useAuth from "../../hooks/useAuth";
 import { storeUserInDB } from "../../Component/Utilities/utilities";
-import { TbFidgetSpinner } from "react-icons/tb";
+import { ImSpinner9 } from "react-icons/im";
 const SignUp = () => {
   const {createUser,updateUserData,loader,setLoader}=useAuth()
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -16,7 +16,7 @@ const navigate = useNavigate()
 const from = location.state?.from?.pathname || "/";
 const handleConfirmPasswordChange = (e) => {
 
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setConfirmPassword(e.target.value);
     setConfirmPasswordError('');
   };
@@ -26,7 +26,7 @@ const handleConfirmPasswordChange = (e) => {
       formState: { errors },
       } = useForm();
       const onSubmit = data => {
-          console.log(data)
+          // console.log(data)
         if (data.password !== confirmPassword) {
             setConfirmPasswordError("Passwords don't match");
             return;
@@ -36,8 +36,8 @@ const handleConfirmPasswordChange = (e) => {
           // create new user
           createUser(data.email,data.password)
           .then(result=>{
-            const loggedUser=result.user;
-            console.log(loggedUser);
+            // const loggedUser=result.user;
+            // console.log(loggedUser);
             updateUserData(result.user,data.name,data.photoURL)
             navigate(from, { replace: true })
             reset()
@@ -159,7 +159,7 @@ const handleConfirmPasswordChange = (e) => {
             className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600  "
           >
            {
-              loader?<TbFidgetSpinner  className='m-auto animate-spin' size={24}></TbFidgetSpinner>
+              loader?<ImSpinner9  className='m-auto animate-spin' size={24}></ImSpinner9>
               :
               'SignUp'
             }
