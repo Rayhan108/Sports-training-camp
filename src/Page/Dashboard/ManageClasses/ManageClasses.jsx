@@ -2,11 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+import { toast } from "react-hot-toast";
+
 
 const ManageClasses = () => {
     const { user } = useAuth();
 
-  const { data: allClasses = [] } = useQuery({
+  const { data: allClasses = [],refetch } = useQuery({
     queryKey: ["classes", user?.email],
     queryFn: async () => {
       const res = await axios.get(
@@ -15,6 +17,36 @@ const ManageClasses = () => {
       return res.data;
     },
   });
+  const handleApproved=(id)=>{
+
+    fetch(`http://localhost:5000/approvedClass/${id}`,{
+      method:'PATCH',
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        if(data.modifiedCount){
+            toast.success(`Approve Success!`)
+            refetch()
+        }
+    })
+ 
+  }
+  const handleDenied=(id)=>{
+
+    fetch(`http://localhost:5000/deniedClass/${id}`,{
+      method:'PATCH',
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        if(data.modifiedCount){
+            toast.success(`Denied Success!`)
+            refetch()
+        }
+    })
+ 
+  }
     return (
         <div>
             <SectionTitle header={"Manage classes"}></SectionTitle>
@@ -66,13 +98,13 @@ const ManageClasses = () => {
                   
                   <td>{eachClass?.status}</td>
                   <th>
-                    <button className="btn btn-ghost btn-xs">Approved</button>
+                    <button disabled={eachClass?.status === 'approved'} onClick={()=>handleApproved(eachClass?._id)} className="btn btn-ghost ">Approve </button>
                   </th>
                   <th>
-                    <button className="btn btn-ghost btn-xs">Denied</button>
+                    <button disabled={eachClass?.status === 'denied'} onClick={()=>handleDenied(eachClass?._id)} className="btn btn-ghost">Denied</button>
                   </th>
                   <th>
-                    <button className="btn btn-ghost btn-xs">Feedback</button>
+                    <button className="btn btn-ghost ">Feedback</button>
                   </th>
                 </tr>
               ))}
