@@ -15,7 +15,7 @@ const UpdateClass = () => {
     const [singleClass,setSingleClass]=useState({});
  
     useEffect(()=>{
-        fetch(`https://assignment12-server-rayhan108.vercel.app/class/${id}`)
+        fetch(`http://localhost:5000/class/${id}`)
         .then((res) => res.json())
          .then((data) => {
            setSingleClass(data);
@@ -40,7 +40,7 @@ const UpdateClass = () => {
         data.seats=seats;
        
         // console.log(data);
-        fetch(`https://assignment12-server-rayhan108.vercel.app/updateClass/${id}`,
+        fetch(`http://localhost:5000/updateClass/${id}`,
         {
             method: "PATCH",
       headers: {

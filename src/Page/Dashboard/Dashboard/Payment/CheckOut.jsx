@@ -16,7 +16,7 @@ const CheckOut = ({ classPrice, id }) => {
   const [transactionId, setTransactionId] = useState("");
 const [success,setSuccess]=useState(false)
 useEffect(()=>{
-  fetch(`http://localhost:5000/selectedClass/${id}`)
+  fetch(`http://localhost:5000/getSelectedClass/${id}`)
   .then(res=>res.json())
   .then(data=>{
     
@@ -86,6 +86,7 @@ useEffect(()=>{
         date: new Date(),
         classId: id,
         classPrice,
+        newClassId:selectClass?.newClassId,
         studentName: user?.displayName,
         studentEmail: user?.email,
         instructorEmail:selectClass?.instructorEmail,
@@ -104,13 +105,15 @@ useEffect(()=>{
         .then((data) => {
           if (data.insertResult.insertedId) {
             setSuccess(true)
-            toast.success("Payement Successfull");
+            toast.success("Payement Successfull")     
           }
           // console.log(data);
         });
     }
-  };
 
+    
+  };
+ 
   return (
     <>
       <form className="w-1/2 space-y-10 mx-auto" onSubmit={handleSubmit}>

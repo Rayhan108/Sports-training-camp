@@ -10,9 +10,7 @@ const EnrolledClasses = () => {
     return (
         <div>
             <SectionTitle header={"my enrolled classes"}></SectionTitle>
-       
-
-            <div className="overflow-x-auto w-1/2 mx-auto">
+     <div className="overflow-x-auto w-1/2 mx-auto">
           <table className="table  text-center">
             {/* head */}
             <thead  className="font-bold text-xl text-center">
@@ -29,7 +27,7 @@ const EnrolledClasses = () => {
             <tbody className="text-center">
               {enrolledClasses.map((singleclass, i) => (
                 
-                <tr key={singleclass._id}>
+                <tr key={i} >
                    
                   <td>{i + 1}</td>
                   <td>
@@ -38,7 +36,7 @@ const EnrolledClasses = () => {
                         <div className="mask mask-squircle w-12 h-12">
                           <img
                             src={singleclass?.classImg}
-                            alt="Avatar Tailwind CSS Component"
+                            
                           />
                         </div>
                       </div>
@@ -66,6 +64,9 @@ const EnrolledClasses = () => {
             </tbody>
           </table>
         </div>
+    
+    
+    
 
 
         </div>

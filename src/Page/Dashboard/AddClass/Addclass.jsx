@@ -26,7 +26,7 @@ const Addclass = () => {
     data = {...data,status:'pending'}
     console.log(data);
  
-    fetch("https://assignment12-server-rayhan108.vercel.app/class", {
+    fetch("http://localhost:5000/class", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

@@ -28,7 +28,7 @@ const PaymentHistory = () => {
         <tbody className="text-center">
           {enrolledClasses.map((singleclass, i) => (
             
-            <tr key={singleclass._id}>
+            <tr key={i}>
                
               <td>{i + 1}</td>
               <td>

@@ -13,12 +13,23 @@ const MyClasses = () => {
     queryKey: ["classes", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `https://assignment12-server-rayhan108.vercel.app/clases/${user?.email}`
+        `http://localhost:5000/clases/${user?.email}`
       );
       return res.data;
     },
   });
+// get total enroled student 
 
+const { data: totalEnrolled=[] } = useQuery({
+    queryKey: ["enrolledClasses", user?.email],
+    queryFn: async () => {
+      const res = await axios.get(
+        `http://localhost:5000/enrolledStudents/${user?.email}`
+      );
+      return res.data;
+    },
+  });
+ 
   // handle see feedback
   const handleSeeFeedback = (feedback) => {
     if (feedback) {
@@ -76,7 +87,7 @@ const MyClasses = () => {
                   </span>
                 </td>
                 <td className="text-right">{eachClass?.price}</td>
-                <td className="text-right">00</td>
+                <td >{totalEnrolled.length}</td>
                 <td>{eachClass?.status}</td>
                 <th>
                   <Link to={`/dashboard/update/${eachClass?._id}`}>

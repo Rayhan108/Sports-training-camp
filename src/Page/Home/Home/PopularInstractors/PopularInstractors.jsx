@@ -11,7 +11,7 @@ const PopularInstractors = () => {
   const { data: instructors = [] } = useQuery({
     queryKey: ["instructors", user?.email],
     queryFn: async () => {
-      const res = await axios.get(`https://assignment12-server-rayhan108.vercel.app/instructors`);
+      const res = await axios.get(`http://localhost:5000/instructors`);
       return res.data;
     },
   });

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -36,11 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/instructors",
-        element:<Instructors></Instructors>,
+        element: <Instructors></Instructors>,
       },
       {
         path: "/classes",
-        element:<Classes></Classes>,
+        element: <Classes></Classes>,
       },
       {
         path: "/login",
@@ -56,61 +56,99 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {  path:"dashboard",
-  element:<PrivetRoute><DashboardLayout></DashboardLayout></PrivetRoute>,
-  children:[
-    {
-      path:'/dashboard',
-      element:<Dashboard></Dashboard>
-    },
-    {
-      path:'enrolledClass',
-      element:<StudentsRoutes><EnrolledClasses></EnrolledClasses></StudentsRoutes>
-    },
-    {
-      path:'mySelectedClass',
-      element:<StudentsRoutes><SelectedClass></SelectedClass></StudentsRoutes>
-    },
-    {
-      path:'pay/:id/:price',
-      element:<StudentsRoutes><Payment></Payment></StudentsRoutes>,
-      
-    },
-    {
-      path:'paymentHistory',
-      element:<StudentsRoutes><PaymentHistory></PaymentHistory></StudentsRoutes>,
-      
-    },
-    {
-      path:'manageClass',
-      element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
-    },
-    {
-      path:'feedback/:id',
-      element:<AdminRoutes><Feedback></Feedback></AdminRoutes>
-    },
-    {
-      path:'manageUsers',
-      element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
-    },
-    {
-      path:'addClass',
-      element:<InstructorsRoutes><Addclass></Addclass></InstructorsRoutes>
-    },
-    {
-      path:'myClass',
-      element:<InstructorsRoutes><MyClasses></MyClasses></InstructorsRoutes>
-    },
-    {
-      path:'update/:id',
-      element:<InstructorsRoutes><UpdateClass></UpdateClass></InstructorsRoutes>,
-       
-    },
-   
-  
-
-
-  ]
-}
+  {
+    path: "dashboard",
+    element: (
+      <PrivetRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivetRoute>
+    ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "enrolledClass",
+        element: (
+          <StudentsRoutes>
+            <EnrolledClasses></EnrolledClasses>
+          </StudentsRoutes>
+        ),
+      },
+      {
+        path: "mySelectedClass",
+        element: (
+          <StudentsRoutes>
+            <SelectedClass></SelectedClass>
+          </StudentsRoutes>
+        ),
+      },
+      {
+        path: "pay/:id/:price",
+        element: (
+          <StudentsRoutes>
+            <Payment></Payment>
+          </StudentsRoutes>
+        ),
+      },
+      {
+        path: "paymentHistory",
+        element: (
+          <StudentsRoutes>
+            <PaymentHistory></PaymentHistory>
+          </StudentsRoutes>
+        ),
+      },
+      {
+        path: "manageClass",
+        element: (
+          <AdminRoutes>
+            <ManageClasses></ManageClasses>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "feedback/:id",
+        element: (
+          <AdminRoutes>
+            <Feedback></Feedback>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "manageUsers",
+        element: (
+          <AdminRoutes>
+            <ManageUsers></ManageUsers>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "addClass",
+        element: (
+          <InstructorsRoutes>
+            <Addclass></Addclass>
+          </InstructorsRoutes>
+        ),
+      },
+      {
+        path: "myClass",
+        element: (
+          <InstructorsRoutes>
+            <MyClasses></MyClasses>
+          </InstructorsRoutes>
+        ),
+      },
+      {
+        path: "update/:id",
+        element: (
+          <InstructorsRoutes>
+            <UpdateClass></UpdateClass>
+          </InstructorsRoutes>
+        ),
+      },
+    ],
+  },
 ]);
 export default router;
