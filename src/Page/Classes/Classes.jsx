@@ -61,10 +61,11 @@ const Classes = () => {
       <SectionTitle header={"classes for you"}></SectionTitle>
       <Container>
         <div className="grid md:grid-cols-3 gap-3">
-          {allApprovedClasses.map((singleClass) => (
+          {allApprovedClasses.map((singleClass,i) => (
             <ClassesCard
               key={singleClass?._id}
               singleClass={singleClass}
+              i={i}
               handleSelectClass={handleSelectClass}
               loggedUser={loggedUser}
             ></ClassesCard>

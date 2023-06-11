@@ -6,13 +6,13 @@ const PopularInstructorCard = ({instructor}) => {
     return (
         <motion.div className="card w-auto bg-base-100 shadow-xl "
         
-            initial={{
-            opacity: 0,
-            translateX: i % 2 === 0 ? -500 : 500,
-            translateY: -500,
-          }}
-          animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-          transition={{ duration: 1, delay: i * 0.3 }}
+        initial={{
+          opacity: 0,
+          translateX: i % 2 === 0 ? -50 : 50,
+          translateY: -50,
+        }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{ duration: 0.3, delay: i * 0.2 }}
         
         
         >
