@@ -13,14 +13,18 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <AuthProvider>
+
+<AuthProvider>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-      <Toaster />
+   <div className='overflow-hidden'>
+   <Toaster />
     <RouterProvider router={router} />
+   </div>
       </QueryClientProvider>
   
     </HelmetProvider>
   </AuthProvider>
+
   </React.StrictMode>,
 )

@@ -20,6 +20,7 @@ import SelectedClass from "../../Page/Dashboard/Dashboard/SelectedClass/Selected
 import UpdateClass from "../../Page/Dashboard/MyClasses/UpdateClass";
 import InstructorsRoutes from "../InstructorsRoutes/InstructorsRoutes";
 import StudentsRoutes from "../StudentsRoutes/StudentsRoutes";
+import Payment from "../../Page/Dashboard/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -87,8 +88,13 @@ const router = createBrowserRouter([
     {
       path:'update/:id',
       element:<UpdateClass></UpdateClass>,
-      // loader:({params})=>fetch(`https://assignment12-server-rayhan108.vercel.app/class/${params.id}`)
+       
     },
+    {
+      path:'pay/:id',
+      element:<Payment></Payment>,
+      
+    }
   
 
 

@@ -3,6 +3,7 @@ import useAuth from "../../../../hooks/useAuth";
 import axios from "axios";
 import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const SelectedClass = () => {
@@ -68,9 +69,9 @@ const SelectedClass = () => {
               </tr>
             </thead>
             <tbody >
-              {mySelectedClasses.map((eachClass, i) => (
+              {mySelectedClasses.map((singleclass, i) => (
                 
-                <tr key={eachClass._id}>
+                <tr key={singleclass._id}>
                    
                   <td>{i + 1}</td>
                   <td>
@@ -78,32 +79,34 @@ const SelectedClass = () => {
                       <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
                           <img
-                            src={eachClass?.classImg}
+                            src={singleclass?.classImg}
                             alt="Avatar Tailwind CSS Component"
                           />
                         </div>
                       </div>
                       <div>
-                        <div className="font-bold">{eachClass?.name}</div>
-                        <div className="text-sm opacity-50">Seats:{eachClass?.seats}</div>
+                        <div className="font-bold">{singleclass?.name}</div>
+                        <div className="text-sm opacity-50">Seats:{singleclass?.seats}</div>
                       </div>
                     </div>
                   </td>
                   <td>
-                   {eachClass?.instructorName}
+                   {singleclass?.instructorName}
                     <br />
                     <span className="badge badge-ghost badge-sm">
-                     {eachClass?.instructorEmail}
+                     {singleclass?.instructorEmail}
                     </span>
                   </td>
-                  <td className="text-right">{eachClass?.price}</td>
+                  <td className="text-right">{singleclass?.price}</td>
                 
-                  <td>{eachClass?.status}</td>
+                  <td>{singleclass?.status}</td>
                   <th>
-                    <button className="btn btn-ghost ">Pay</button>
+                   <Link  to={`/dashboard/pay/${singleclass?._id}`} >
+                   <button className="btn btn-ghost ">Pay</button>
+                   </Link>
                   </th>
                   <th>
-                    <button onClick={()=>handleDelete(eachClass?._id)} className="btn btn-ghost">Delete</button>
+                    <button onClick={()=>handleDelete(singleclass?._id)} className="btn btn-ghost">Delete</button>
                   </th>
                
                 </tr>

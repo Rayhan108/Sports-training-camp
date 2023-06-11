@@ -14,7 +14,7 @@ const ClassesCard = ({singleClass,handleSelectClass,loggedUser}) => {
           <p>Instructor Name: {singleClass?.instructorName}</p>
           <h2 className="card-title">{singleClass?.name}</h2>
           <p>Available Seats: {singleClass?.seats}</p>
-          <p>Price: <span className="text-xl"> ৳</span> {singleClass?.price}</p>
+          <p>Price: ${singleClass?.price}</p>
           <div className="card-actions">
             <button onClick={()=>handleSelectClass(singleClass?._id)} className={"btn btn-primary"}
             disabled={loggedUser?.role=='admin'||loggedUser?.role=='instructor'||singleClass?.seats == 0}
