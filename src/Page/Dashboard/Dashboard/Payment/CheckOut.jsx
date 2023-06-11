@@ -10,21 +10,20 @@ const CheckOut = ({ classPrice, id }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
-  const [instructorEmail,setInstructorEmail]=useState("");
+  const [selectClass,setSelectClass]=useState({});
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
-
+const [success,setSuccess]=useState(false)
 useEffect(()=>{
   fetch(`http://localhost:5000/selectedClass/${id}`)
   .then(res=>res.json())
   .then(data=>{
     
-    setInstructorEmail(data[0].instructorEmail)
+    setSelectClass(data[0])
   })
 },[id])
-
-// console.log(instructorEmail);
+// console.log(selectClass);
   useEffect(() => {
     if (classPrice > 0) {
       fetch("http://localhost:5000/create-payment-intent", {
@@ -89,7 +88,9 @@ useEffect(()=>{
         classPrice,
         studentName: user?.displayName,
         studentEmail: user?.email,
-        instructorEmail:instructorEmail,
+        instructorEmail:selectClass?.instructorEmail,
+        className:selectClass?.name,
+        classImg:selectClass?.classImg,
         transactionId: paymentIntent.id,
         status: "paid",
       };
@@ -102,9 +103,10 @@ useEffect(()=>{
         .then((res) => res.json())
         .then((data) => {
           if (data.insertResult.insertedId) {
+            setSuccess(true)
             toast.success("Payement Successfull");
           }
-          console.log(data);
+          // console.log(data);
         });
     }
   };
@@ -132,7 +134,7 @@ useEffect(()=>{
         <button
           className="btn btn-primary bg-blue-600 btn-sm mt-10 w-28 "
           type="submit"
-          disabled={!stripe || !clientSecret || processing}
+          disabled={!stripe || !clientSecret || processing ||success}
         >
           {processing ? (
             <ImSpinner9 className="m-auto animate-spin" size={24}></ImSpinner9>
