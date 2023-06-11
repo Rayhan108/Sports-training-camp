@@ -1,20 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../hooks/useAuth";
-import axios from "axios";
+
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+import useMyEnrolledClasses from "../../../hooks/useMyEnrolledClasses";
 
 
 const EnrolledClasses = () => {
-    const {user}=useAuth()
-    const { data: enrolledClasses=[] } = useQuery({
-        queryKey: ["enrolledClasses", user?.email],
-        queryFn: async () => {
-          const res = await axios.get(
-            `http://localhost:5000/paidClass/${user?.email}`
-          );
-          return res.data;
-        },
-      });
+ 
+      const [enrolledClasses]=useMyEnrolledClasses()
     //   console.log(enrolledClasses);
     return (
         <div>

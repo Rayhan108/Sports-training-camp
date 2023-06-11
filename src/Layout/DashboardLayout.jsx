@@ -2,6 +2,7 @@ import { FaHome } from "react-icons/fa";
 import { MdOutlineClass,MdOutlineHotelClass } from "react-icons/md";
 import { GiClassicalKnowledge } from "react-icons/gi";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { RiSecurePaymentLine } from "react-icons/ri";
 import { SiInstructure,SiGoogleclassroom } from "react-icons/si";
 
 import { NavLink, Outlet } from "react-router-dom";
@@ -62,6 +63,9 @@ if(isLoading){
               </li>
               <li>
                 <NavLink to="enrolledClass"><GiClassicalKnowledge></GiClassicalKnowledge> My Enrolled Classes</NavLink>
+              </li>
+              <li>
+                <NavLink to="paymentHistory"><RiSecurePaymentLine></RiSecurePaymentLine>Payment History</NavLink>
               </li>
             </>
           )}

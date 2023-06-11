@@ -22,6 +22,7 @@ import InstructorsRoutes from "../InstructorsRoutes/InstructorsRoutes";
 import StudentsRoutes from "../StudentsRoutes/StudentsRoutes";
 import Payment from "../../Page/Dashboard/Dashboard/Payment/Payment";
 import Feedback from "../../Page/Dashboard/ManageClasses/Feedback";
+import PaymentHistory from "../../Page/Dashboard/PaymentHistory/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,16 @@ const router = createBrowserRouter([
       element:<StudentsRoutes><SelectedClass></SelectedClass></StudentsRoutes>
     },
     {
+      path:'pay/:id/:price',
+      element:<StudentsRoutes><Payment></Payment></StudentsRoutes>,
+      
+    },
+    {
+      path:'paymentHistory',
+      element:<StudentsRoutes><PaymentHistory></PaymentHistory></StudentsRoutes>,
+      
+    },
+    {
       path:'manageClass',
       element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
     },
@@ -95,11 +106,7 @@ const router = createBrowserRouter([
       element:<InstructorsRoutes><UpdateClass></UpdateClass></InstructorsRoutes>,
        
     },
-    {
-      path:'pay/:id/:price',
-      element:<Payment></Payment>,
-      
-    }
+   
   
 
 
