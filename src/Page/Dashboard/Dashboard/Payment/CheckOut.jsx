@@ -10,10 +10,21 @@ const CheckOut = ({ classPrice, id }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
+  const [instructorEmail,setInstructorEmail]=useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
 
+useEffect(()=>{
+  fetch(`http://localhost:5000/selectedClass/${id}`)
+  .then(res=>res.json())
+  .then(data=>{
+    
+    setInstructorEmail(data[0].instructorEmail)
+  })
+},[id])
+
+// console.log(instructorEmail);
   useEffect(() => {
     if (classPrice > 0) {
       fetch("http://localhost:5000/create-payment-intent", {
@@ -78,6 +89,7 @@ const CheckOut = ({ classPrice, id }) => {
         classPrice,
         studentName: user?.displayName,
         studentEmail: user?.email,
+        instructorEmail:instructorEmail,
         transactionId: paymentIntent.id,
         status: "paid",
       };
