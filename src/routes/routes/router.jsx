@@ -21,6 +21,7 @@ import UpdateClass from "../../Page/Dashboard/MyClasses/UpdateClass";
 import InstructorsRoutes from "../InstructorsRoutes/InstructorsRoutes";
 import StudentsRoutes from "../StudentsRoutes/StudentsRoutes";
 import Payment from "../../Page/Dashboard/Dashboard/Payment/Payment";
+import Feedback from "../../Page/Dashboard/ManageClasses/Feedback";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
     },
     {
+      path:'feedback/:id',
+      element:<AdminRoutes><Feedback></Feedback></AdminRoutes>
+    },
+    {
       path:'manageUsers',
       element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
     },
@@ -87,7 +92,7 @@ const router = createBrowserRouter([
     },
     {
       path:'update/:id',
-      element:<UpdateClass></UpdateClass>,
+      element:<InstructorsRoutes><UpdateClass></UpdateClass></InstructorsRoutes>,
        
     },
     {

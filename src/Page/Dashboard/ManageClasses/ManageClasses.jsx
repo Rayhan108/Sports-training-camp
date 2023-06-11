@@ -3,6 +3,7 @@ import useAuth from "../../../hooks/useAuth";
 import axios from "axios";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 
 const ManageClasses = () => {
@@ -64,7 +65,7 @@ const ManageClasses = () => {
                 <th>Status</th>
                 <th>Approved</th>
                 <th>Denied</th>
-                <th>Send Feedback</th>
+                <th>Feedback</th>
               </tr>
             </thead>
             <tbody >
@@ -104,7 +105,9 @@ const ManageClasses = () => {
                     <button disabled={eachClass?.status === 'denied'||eachClass?.status === 'approved'} onClick={()=>handleDenied(eachClass?._id)} className="btn btn-ghost">Denied</button>
                   </th>
                   <th>
-                    <button className="btn btn-ghost ">Feedback</button>
+                   <Link to={`/dashboard/feedback/${eachClass?._id}`}>
+                   <button className="btn btn-ghost ">Send Feedback</button>
+                   </Link>
                   </th>
                 </tr>
               ))}
