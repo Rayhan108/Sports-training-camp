@@ -13,7 +13,7 @@ const MyClasses = () => {
     queryKey: ["classes", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/clases/${user?.email}`
+        `https://assignment12-server-psi.vercel.app/clases/${user?.email}`
       );
       return res.data;
     },
@@ -24,7 +24,7 @@ const { data: totalEnrolled=[] } = useQuery({
     queryKey: ["enrolledClasses", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/enrolledStudents/${user?.email}`
+        `https://assignment12-server-psi.vercel.app/enrolledStudents/${user?.email}`
       );
       return res.data;
     },

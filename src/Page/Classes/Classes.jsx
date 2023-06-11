@@ -13,7 +13,7 @@ const Classes = () => {
 
   const { data: allUsers = [] } = useQuery(["allUsers"], async () => {
     const res = await fetch(
-      "http://localhost:5000/allUsers"
+      "https://assignment12-server-psi.vercel.app/allUsers"
     );
     return res.json();
   });
@@ -22,7 +22,7 @@ const Classes = () => {
     queryKey: ["allApprovedClasses", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/allApprovedClasses`
+        `https://assignment12-server-psi.vercel.app/allApprovedClasses`
       );
       return res.data;
     },
@@ -40,7 +40,7 @@ const Classes = () => {
     }
     const data = { id: id, selectBy: user?.email };
     // console.log(data);
-    fetch(`http://localhost:5000/selectedClass`, {
+    fetch(`https://assignment12-server-psi.vercel.app/selectedClass`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

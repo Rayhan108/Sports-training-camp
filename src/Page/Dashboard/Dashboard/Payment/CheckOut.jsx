@@ -16,7 +16,7 @@ const CheckOut = ({ classPrice, id }) => {
   const [transactionId, setTransactionId] = useState("");
 const [success,setSuccess]=useState(false)
 useEffect(()=>{
-  fetch(`http://localhost:5000/getSelectedClass/${id}`)
+  fetch(`https://assignment12-server-psi.vercel.app/getSelectedClass/${id}`)
   .then(res=>res.json())
   .then(data=>{
     
@@ -26,7 +26,7 @@ useEffect(()=>{
 // console.log(selectClass);
   useEffect(() => {
     if (classPrice > 0) {
-      fetch("http://localhost:5000/create-payment-intent", {
+      fetch("https://assignment12-server-psi.vercel.app/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ classPrice: classPrice }),
@@ -96,7 +96,7 @@ useEffect(()=>{
         status: "paid",
       };
 
-      fetch("http://localhost:5000/payments", {
+      fetch("https://assignment12-server-psi.vercel.app/payments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payment),

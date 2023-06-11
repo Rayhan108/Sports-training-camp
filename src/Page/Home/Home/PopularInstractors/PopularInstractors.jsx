@@ -11,7 +11,7 @@ const PopularInstractors = () => {
   const { data: instructors = [] } = useQuery({
     queryKey: ["instructors", user?.email],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/instructors`);
+      const res = await axios.get(`https://assignment12-server-psi.vercel.app/instructors`);
       return res.data;
     },
   });
@@ -23,8 +23,8 @@ const PopularInstractors = () => {
       <SectionTitle header="Popular Instructors "></SectionTitle>
       <Container>
         <div className="grid md:grid-cols-3 gap-10">
-          {instructors.slice(1, 7).map((instructor,i) => (
-            <PopularInstructorCard 
+          {instructors.slice(1, 7).map((instructor, i) => (
+            <PopularInstructorCard
               key={instructor?._id}
               instructor={instructor}
               i={i}

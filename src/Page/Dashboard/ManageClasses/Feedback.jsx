@@ -17,7 +17,7 @@ const Feedback = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    fetch(`http://localhost:5000/feedback/${id}`, {
+    fetch(`https://assignment12-server-psi.vercel.app/feedback/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

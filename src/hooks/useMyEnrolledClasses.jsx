@@ -9,7 +9,7 @@ const useMyEnrolledClasses = () => {
         queryKey: ["enrolledClasses", user?.email],
         queryFn: async () => {
           const res = await axios.get(
-            `http://localhost:5000/paidClass/${user?.email}`
+            `https://assignment12-server-psi.vercel.app/paidClass/${user?.email}`
           );
           return res.data;
         },
