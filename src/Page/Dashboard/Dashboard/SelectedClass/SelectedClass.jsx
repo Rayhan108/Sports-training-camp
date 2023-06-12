@@ -101,7 +101,7 @@ const SelectedClass = () => {
                 
                   <td>{singleclass?.status}</td>
                   <th>
-                   {console.log(singleclass)}
+                   {/* {console.log(singleclass)} */}
                    <Link  to={`/dashboard/pay/${singleclass?._id}/${singleclass?.price}`} >
                    <button className="btn btn-ghost ">Pay</button>
                    </Link>

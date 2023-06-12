@@ -18,17 +18,7 @@ const MyClasses = () => {
       return res.data;
     },
   });
-// get total enroled student 
 
-const { data: totalEnrolled=[] } = useQuery({
-    queryKey: ["enrolledClasses", user?.email],
-    queryFn: async () => {
-      const res = await axios.get(
-        `https://assignment12-server-psi.vercel.app/enrolledStudents/${user?.email}`
-      );
-      return res.data;
-    },
-  });
  
   // handle see feedback
   const handleSeeFeedback = (feedback) => {
@@ -87,7 +77,7 @@ const { data: totalEnrolled=[] } = useQuery({
                   </span>
                 </td>
                 <td className="text-right">{eachClass?.price}</td>
-                <td >{totalEnrolled.length}</td>
+                <td >{eachClass?.enrolledStudents}</td>
                 <td>{eachClass?.status}</td>
                 <th>
                   <Link to={`/dashboard/update/${eachClass?._id}`}>

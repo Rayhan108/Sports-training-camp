@@ -4,13 +4,11 @@ import useAuth from "../../../hooks/useAuth";
 import { ImSpinner9 } from "react-icons/im";
 
 import { toast } from "react-hot-toast";
-// const token = import.meta.env.VITE_photo_upload_token;
+
 
 const Addclass = () => {
   const { user, loader } = useAuth();
 
-  //   const img_url = `https://api.imgbb.com/1/upload?&key=${token}`
-  console.log(user);
   const {
     register,
     handleSubmit,
@@ -23,7 +21,7 @@ const Addclass = () => {
     data.price = price;
     const seats = Number(data.seats)
     data.seats=seats;
-    data = {...data,status:'pending'}
+    data = {...data,status:'pending',enrolledStudents:parseInt(0)}
     console.log(data);
  
     fetch("https://assignment12-server-psi.vercel.app/class", {
