@@ -9,7 +9,6 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import InstructorsRoutes from "../InstructorsRoutes/InstructorsRoutes";
 import StudentsRoutes from "../StudentsRoutes/StudentsRoutes";
 
-
 import EnrolledClasses from "../../Page/Dashboard/Students/EnrolledClasses/EnrolledClasses";
 import MyClasses from "../../Page/Dashboard/Instructor/MyClasses/MyClasses";
 import Instructors from "../../Page/Instructors/Instructors";
