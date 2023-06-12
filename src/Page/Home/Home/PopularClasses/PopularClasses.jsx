@@ -26,7 +26,7 @@ const PopularClasses = () => {
   return (
    <Container>
      <div >
-        {classes?.length}
+    
         
       <SectionTitle header={"Popular Classes"}>
       </SectionTitle>
