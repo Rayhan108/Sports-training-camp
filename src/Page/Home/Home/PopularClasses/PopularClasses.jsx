@@ -31,7 +31,7 @@ const PopularClasses = () => {
       <SectionTitle header={"Popular Classes"}>
       </SectionTitle>
       <div className="grid md:grid-cols-3 gap-5">
-          {classes?.map((s) => (
+          {classes?.slice(0,6).map((s) => (
             <ClassCard key={s?._id} s={s}></ClassCard>
           ))}
         </div>
