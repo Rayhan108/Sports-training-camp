@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 
-import useAuth from "../../../hooks/useAuth";
+
 import { ImSpinner9 } from "react-icons/im";
 
 import { toast } from "react-hot-toast";
+import useAuth from "../../../../hooks/useAuth";
 
 
 const Addclass = () => {

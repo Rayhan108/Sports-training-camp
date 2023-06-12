@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../hooks/useAuth";
+
 import axios from "axios";
-import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
+import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 
 
 const ManageClasses = () => {

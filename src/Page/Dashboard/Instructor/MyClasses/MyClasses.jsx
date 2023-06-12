@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../hooks/useAuth";
+
 import axios from "axios";
-import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import useAuth from "../../../../hooks/useAuth";
+import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 
 const MyClasses = () => {
   const { user } = useAuth();

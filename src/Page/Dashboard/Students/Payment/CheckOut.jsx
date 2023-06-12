@@ -1,9 +1,10 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 
-import useAuth from "../../../../hooks/useAuth";
+
 import { toast } from "react-hot-toast";
 import { ImSpinner9 } from "react-icons/im";
+import useAuth from "../../../../hooks/useAuth";
 
 const CheckOut = ({ classPrice, id }) => {
   const { user } = useAuth();

@@ -5,24 +5,26 @@ import Login from "../../Page/Login/Login";
 import SignUp from "../../Page/SignUp/SignUp";
 import ErrorPage from "../../Page/ErrorPage/ErrorPage";
 import DashboardLayout from "../../Layout/DashboardLayout";
-import EnrolledClasses from "../../Page/Dashboard/EnrolledClasses/EnrolledClasses";
-import MyClasses from "../../Page/Dashboard/MyClasses/MyClasses";
-import ManageClasses from "../../Page/Dashboard/ManageClasses/ManageClasses";
 
-import ManageUsers from "../../Page/Dashboard/ManageUsers/ManageUsers";
-import Dashboard from "../../Page/Dashboard/Dashboard/Dashboard";
-import Addclass from "../../Page/Dashboard/AddClass/Addclass";
-import Instructors from "../../Page/Instructors/Instructors";
-import AdminRoutes from "../AdminRoutes/AdminRoutes";
-import PrivetRoute from "../PrivetRoutes/PrivetRoute";
-import Classes from "../../Page/Classes/Classes";
-import SelectedClass from "../../Page/Dashboard/Dashboard/SelectedClass/SelectedClass";
-import UpdateClass from "../../Page/Dashboard/MyClasses/UpdateClass";
 import InstructorsRoutes from "../InstructorsRoutes/InstructorsRoutes";
 import StudentsRoutes from "../StudentsRoutes/StudentsRoutes";
-import Payment from "../../Page/Dashboard/Dashboard/Payment/Payment";
-import Feedback from "../../Page/Dashboard/ManageClasses/Feedback";
-import PaymentHistory from "../../Page/Dashboard/PaymentHistory/PaymentHistory";
+
+
+import EnrolledClasses from "../../Page/Dashboard/Students/EnrolledClasses/EnrolledClasses";
+import MyClasses from "../../Page/Dashboard/Instructor/MyClasses/MyClasses";
+import Instructors from "../../Page/Instructors/Instructors";
+import Classes from "../../Page/Classes/Classes";
+import PrivetRoute from "../PrivetRoutes/PrivetRoute";
+import Dashboard from "../../Page/Dashboard/Dashboard/Dashboard";
+import SelectedClass from "../../Page/Dashboard/Students/SelectedClass/SelectedClass";
+import Payment from "../../Page/Dashboard/Students/Payment/Payment";
+import PaymentHistory from "../../Page/Dashboard/Students/PaymentHistory/PaymentHistory";
+import AdminRoutes from "../AdminRoutes/AdminRoutes";
+import Feedback from "../../Page/Dashboard/Admin/ManageClasses/Feedback";
+import ManageUsers from "../../Page/Dashboard/Admin/ManageUsers/ManageUsers";
+import Addclass from "../../Page/Dashboard/Instructor/AddClass/Addclass";
+import UpdateClass from "../../Page/Dashboard/Instructor/MyClasses/UpdateClass";
+import ManageClasses from "../../Page/Dashboard/Admin/ManageClasses/ManageClasses";
 
 const router = createBrowserRouter([
   {

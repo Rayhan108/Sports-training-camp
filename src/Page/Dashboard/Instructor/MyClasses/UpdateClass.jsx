@@ -2,10 +2,11 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 
 import {   useLocation, useNavigate, useParams } from "react-router-dom";
-// import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../hooks/useAuth";
+
+
 
 import { useEffect, useState } from "react";
+import useAuth from "../../../../hooks/useAuth";
 
 
 

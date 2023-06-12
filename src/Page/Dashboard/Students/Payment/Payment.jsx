@@ -1,9 +1,10 @@
 
 import {  useParams } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
-import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
+
 import { Elements } from "@stripe/react-stripe-js";
 import CheckOut from "./CheckOut";
+import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
 const {id,price}=useParams();

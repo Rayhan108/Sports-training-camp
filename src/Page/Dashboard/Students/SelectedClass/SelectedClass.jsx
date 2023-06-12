@@ -1,16 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../../hooks/useAuth";
+
 import axios from "axios";
-import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
+
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
+import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
 
 
 const SelectedClass = () => {
     const { user } = useAuth();
-
+// const token = localStorage.getItem('access-token')
+//     const { data: mySelectedClasses = [],refetch } = useQuery({
+//       queryKey: ["mySelectedClasses", user?.email],
+//       queryFn: async () => {
+//         const res = await axios.get(
+//           `https://assignment12-server-psi.vercel.app/mySelectedClass/${user?.email}`,{headers:{
+//             authorization:`bearer ${token}`
+//           }}
+//         );
+//         return res.data;
+//       },
+//     });
     const { data: mySelectedClasses = [],refetch } = useQuery({
-      queryKey: ["myEnrolledClasses", user?.email],
+      queryKey: ["mySelectedClasses", user?.email],
       queryFn: async () => {
         const res = await axios.get(
           `https://assignment12-server-psi.vercel.app/mySelectedClass/${user?.email}`

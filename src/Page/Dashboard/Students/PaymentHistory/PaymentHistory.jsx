@@ -1,6 +1,7 @@
 
-import useMyEnrolledClasses from "../../../hooks/useMyEnrolledClasses";
-import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
+import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
+import useMyEnrolledClasses from "../../../../hooks/useMyEnrolledClasses";
+
 
 
 const PaymentHistory = () => {
