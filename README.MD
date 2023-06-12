@@ -33,7 +33,7 @@ I created this site by using vite , react router v6.10.0,tailwind and daisy UI.W
 
 ## Live Site Link
 
-  - **Firebase Client Site Live Link**: 
+  - **Firebase Client Site Live Link**: https://sports-training-camp.web.app
 
  - **vercel server  Site Link**: https://assignment12-server-psi.vercel.app/
             

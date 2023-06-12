@@ -1,32 +1,43 @@
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
+import Container from "../../../../Component/Container/Container";
 import SectionTitle from "../../../../Component/SectionTitle/SectionTitle";
-import useAuth from "../../../../hooks/useAuth";
-import axios from "axios";
-
-
-
-
-
+// import useAuth from "../../../../hooks/useAuth";
+// import axios from "axios";
+import ClassCard from "./ClassCard";
+import { useEffect, useState } from "react";
 
 const PopularClasses = () => {
-    const {user}=useAuth();
-    const { data: popularClasses = [] } = useQuery({
-        queryKey: ["allApprovedClasses", user?.email],
-        queryFn: async () => {
-          const res = await axios.get(
-            `http://localhost:5000/mostEnrolled`
-          );
-          return res.data;
-        },
-      });
-      console.log(popularClasses);
-    return (
-        <div>
-            <SectionTitle header={"Popular Classes"}>
+  const [classes, setClasses] = useState([]);
+  //   const { user } = useAuth();
+  //   const { data: popularClasses = [] } = useQuery({
+  //     queryKey: ["popularClasses", user?.email],
+  //     queryFn: async () => {
+  //       const res = await axios.get(`https://assignment12-server-psi.vercel.app/mostEnrolled`);
+  //       return res.data;
+  //     },
+  //   });
 
-            </SectionTitle>
+  useEffect(() => {
+    fetch("https://assignment12-server-psi.vercel.app/mostEnrolled")
+      .then((res) => res.json())
+      .then((data) => setClasses(data));
+  }, []);
+
+  return (
+   <Container>
+     <div >
+        {classes?.length}
+        
+      <SectionTitle header={"Popular Classes"}>
+      </SectionTitle>
+      <div className="grid md:grid-cols-3 gap-5">
+          {classes?.map((s) => (
+            <ClassCard key={s?._id} s={s}></ClassCard>
+          ))}
         </div>
-    );
+    </div>
+   </Container>
+  );
 };
 
 export default PopularClasses;
