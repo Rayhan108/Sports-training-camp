@@ -10,9 +10,10 @@ const WhyJoinUs = () => {
     <div>
       <Container>
         <SectionTitle header={"WHy join us"}></SectionTitle>
-        <div className="flex flex-row gap-5 ">
-          <div className="mt-32 ">
-            <p className="text-red-700 mb-5 font-bold">Why You Join Us</p>
+        <div className="md:flex md:flex-row gap-5 ">
+          <div className="md:mt-32 ">
+            <p className="text-red-700 mb-5 font-bold">Why You Join ???</p>
+           
             <h1 className="font-bold text-xl">
               {" "}
               Life is like soccer, we need GOALS.
