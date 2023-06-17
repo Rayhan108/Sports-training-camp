@@ -26,8 +26,7 @@ const PopularClasses = () => {
   return (
    <Container>
      <div >
-    
-        
+   
       <SectionTitle header={"Popular Classes"}>
       </SectionTitle>
       <div className="grid md:grid-cols-3 gap-5">

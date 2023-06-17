@@ -3,6 +3,7 @@ import TopSlider from "../TopSlider/TopSlider";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstractors from "../PopularInstractors/PopularInstractors";
 import AboutUs from "../AboutUs/AboutUs";
+import Topplayer from "../TopPlayer/Topplayer";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
         <TopSlider></TopSlider>
         <PopularClasses></PopularClasses>
         <PopularInstractors></PopularInstractors>
+        <Topplayer></Topplayer>
         <AboutUs></AboutUs>
       </div>
     </>

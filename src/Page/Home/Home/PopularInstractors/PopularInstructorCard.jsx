@@ -16,12 +16,10 @@ const PopularInstructorCard = ({instructor}) => {
         
         
         >
-          <div className=" bg-white shadow-lg rounded-lg overflow-hidden">
-
-          </div>
-        <figure><img style={{height:"270px"}} className="object-cover" src={photo} /></figure>
+       
+        <figure><img style={{height:"270px"}} className="object-cover rounded-lg circle" src={photo} /></figure>
         <div className="card-body ">
-          <h2 className=" text-center font-bold">{name}</h2>
+          <h2 className="shadow-slate-500 shadow-xl mt-0 text-center font-bold">{name}</h2>
         
         </div>
       </motion.div>
