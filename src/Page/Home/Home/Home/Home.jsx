@@ -4,6 +4,7 @@ import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstractors from "../PopularInstractors/PopularInstractors";
 import AboutUs from "../AboutUs/AboutUs";
 import Topplayer from "../TopPlayer/Topplayer";
+import Subscribe from "../Subscribe/Subscribe";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
         <PopularClasses></PopularClasses>
         <PopularInstractors></PopularInstractors>
         <Topplayer></Topplayer>
+        <Subscribe></Subscribe>
         <AboutUs></AboutUs>
       </div>
     </>

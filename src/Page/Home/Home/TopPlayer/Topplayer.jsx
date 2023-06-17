@@ -75,6 +75,7 @@ const Topplayer = () => {
           {/* -------------- */}
 
         </div>
+        <div className="text-right mr-3 mt-3"><button className="btn btn-outline btn-primary">VIEW FULL TEAM</button></div>
       </Container>
     </>
   );
