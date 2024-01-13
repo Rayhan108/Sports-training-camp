@@ -23,7 +23,7 @@ const Addclass = () => {
     const seats = Number(data.seats)
     data.seats=seats;
     data = {...data,status:'pending',enrolledStudents:parseInt(0)}
-    console.log(data);
+    // console.log(data);
  
     fetch("https://assignment12-server-psi.vercel.app/class", {
       method: "POST",

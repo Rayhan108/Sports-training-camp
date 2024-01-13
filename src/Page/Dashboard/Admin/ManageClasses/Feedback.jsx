@@ -15,7 +15,7 @@ const Feedback = () => {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/dashboard/manageClass";
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
 
     fetch(`https://assignment12-server-psi.vercel.app/feedback/${id}`, {
       method: "PATCH",

@@ -14,10 +14,24 @@ const Subscribe = () => {
             <p className="font-semibold text-3xl mb-3">For <span className="text-amber-400">Exclusive Offers</span></p>
             <p className="font-semibold text-3xl mb-3">And <span className="text-amber-400">Latest News</span></p>
            
-            <div className="relative">
+            {/* <div className="relative">
         <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" /> 
         <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
-      </div>
+        
+      </div> */}
+        <div className="form-control mt-10 ">
+          <div className="join">
+            <input
+              type="text"
+              placeholder="Search Properties"
+              className="input input-bordered  md:w-full join-item"
+            />
+              <button className=" join-item text-white   bg-[#f7760c] w-32" type="submit">
+              Search
+            </button>
+          </div>
+        
+        </div>
           </div>
         </div>
       </div>

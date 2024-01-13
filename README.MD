@@ -4,7 +4,7 @@
 A Sports Training Camp website is an online platform designed to provide information, services, and resources related to sports training camps. It serves as a centralized hub for athletes, coaches, and sports enthusiasts interested in participating in or organizing training camps.
 
 ## Tecnology
-I created this site by using vite , react router v6.10.0,tailwind and daisy UI.We also use folowing package:
+I created this site by using vite , react router v6.10.0,tailwind and daisy UI.I also use folowing package:
 - **firebase**
 - **React Icons**
 - **react-hook-form**
@@ -27,7 +27,7 @@ I created this site by using vite , react router v6.10.0,tailwind and daisy UI.W
 - **Login**:These route registered user can login with their email and password.New user can go register page.If user want they can login with google .
 - **Instructors**:Users can show all instructors in this route.
 - **Classes**:Students can see all classes here and they can select the class.When available seat is zero the button is desabled and cart background will red.Button also desabled for admin and instructors.
-- **Students Dashboard**:Students who select class from the classes page the can show this classes in selected class page.if he want he can delete this class in this page and he can also pay and succesfully enrolled.After enrolled successfully the class deleted in this page and students can find the class enrolled class page.Another page is payment history ,this page store students payment information.And letest payment is in the top.
+- **Students Dashboard**:Students select class from the classes page the can show this classes in selected class page.if he want he can delete this class in this page and he can also pay and succesfully enrolled.After enrolled successfully the class deleted in this page and students can find the class enrolled class page.Another page is payment history ,this page store students payment information.And letest payment is in the top.
 - **Instructor DashBoard**:Instructors can see their added classes in my Classes page.he can update the class in this page,he can also see total enrolled students and if denied the class by the admin he can see this reason by clicking see feedback buttons.Another page is Add Class,instructors can add class in this page. 
 - **Admin DashBoard**:There is manage user page,if  a admin want he can made an student to instructor or admin by clicking make instructors button.Another page is manage class page.In this page admin can aprove or denied class.If class will be denied he can give an feedback for denied reason.
 

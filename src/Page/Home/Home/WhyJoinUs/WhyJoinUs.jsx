@@ -12,7 +12,7 @@ const WhyJoinUs = () => {
         <SectionTitle header={"WHy join us"}></SectionTitle>
         <div className="md:flex md:flex-row gap-5 ">
           <div className="md:mt-32 ">
-            <p className="text-red-700 mb-5 font-bold">Why You Join ???</p>
+            <p className="text-orange-500 mb-5 text-3xl font-bold">Why You Join ???</p>
            
             <h1 className="font-bold text-xl">
               {" "}
@@ -28,7 +28,7 @@ const WhyJoinUs = () => {
           <div className="grid md:grid-cols-2 gap-5 group">
             <div className="card-body bg-white ">
               <h2 className="card-title font-bold">
-                <GiTeacher className="text-red-700 font-bold text-3xl"></GiTeacher>{" "}
+                <GiTeacher className="text-orange-500 font-bold text-3xl"></GiTeacher>{" "}
                 Professional Coach
               </h2>
               <p>
@@ -39,7 +39,7 @@ const WhyJoinUs = () => {
             <div className="card-body bg-white group-hover:scale-110">
               <h2 className="card-title font-bold">
                 {" "}
-                <TbAwardFilled className="text-red-700 font-bold text-3xl"></TbAwardFilled>
+                <TbAwardFilled className="text-orange-500 font-bold text-3xl"></TbAwardFilled>
                 Prestigious Club
               </h2>
               <p>
@@ -50,7 +50,7 @@ const WhyJoinUs = () => {
             <div className="card-body bg-white">
               <h2 className="card-title font-bold">
                 {" "}
-                <BsFillHouseGearFill className="text-red-700 font-bold text-3xl"></BsFillHouseGearFill>
+                <BsFillHouseGearFill className="text-orange-500 font-bold text-3xl"></BsFillHouseGearFill>
                 Amenities
               </h2>
               <p>
@@ -61,7 +61,7 @@ const WhyJoinUs = () => {
             <div className="card-body bg-white">
               <h2 className="card-title font-bold">
                 {" "}
-                <MdOutlineContactSupport className="text-red-700 font-bold text-3xl"></MdOutlineContactSupport>
+                <MdOutlineContactSupport className="text-orange-500 font-bold text-3xl"></MdOutlineContactSupport>
                 Support
               </h2>
               <p>

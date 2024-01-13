@@ -15,7 +15,7 @@ const Topplayer = () => {
             <div className="p-3 flex flex-row justify-between">
               <div className="">
                 <h2 className="card-title">BILLIE BOB SMITH</h2>
-                <div className="bg-orange-500 w-2/4 p-1">
+                <div className="bg-orange-500 text-center w-2/4 p-1 rounded">
                   <p className="font-bold mx-auto ">Striker</p>
                 </div>
               </div>
@@ -36,7 +36,7 @@ const Topplayer = () => {
             <div className="p-3 flex flex-row justify-between">
               <div className="">
                 <h2 className="card-title">BILLIE BOB SMITH</h2>
-                <div className="bg-orange-500 w-2/4 p-1">
+                <div className="bg-orange-500 w-2/4 p-1 text-center rounded">
                   <p className="font-bold mx-auto ">Striker</p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const Topplayer = () => {
             <div className="p-3 flex flex-row justify-between">
               <div className="">
                 <h2 className="card-title">BILLIE BOB SMITH</h2>
-                <div className="bg-orange-500 w-2/4 p-1">
+                <div className="bg-orange-500 w-2/4 p-1 rounded text-center">
                   <p className="font-bold mx-auto ">Striker</p>
                 </div>
               </div>
@@ -75,7 +75,7 @@ const Topplayer = () => {
           {/* -------------- */}
 
         </div>
-        <div className="text-right mr-3 mt-3"><button className="btn btn-outline btn-primary">VIEW FULL TEAM</button></div>
+        <div className="text-right mr-3 mt-7"><button className="btn-outline border-orange-500 text-black hover:bg-orange-500 hover:text-white btn">VIEW FULL TEAM</button></div>
       </Container>
     </>
   );

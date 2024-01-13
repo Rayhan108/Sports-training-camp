@@ -9,7 +9,7 @@ const ClassCard = ({s}) => {
     <img className=" group-hover:scale-110  transition" src={s?.classImg} alt="Shoes" style={{height:"300px"}} />
   </figure>
   <div className="card-body">
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex gap-10 md:gap-0 sm:flex-row sm:items-center sm:justify-between">
       <div className="mt-3 sm:mt-0">
         <h2 className="card-title">{s?.instructorName}</h2>
         <p>Email: {s?.instructorEmail}</p>
@@ -22,7 +22,7 @@ const ClassCard = ({s}) => {
     </div>
     <div className="card-actions mt-3 sm:mt-0 justify-start ">
       <Link to="/classes">
-        <button className="btn btn-primary cursor-pointer">See All Classes</button>
+        <button className="h-3rem bg-[#f7760c] text-white px-1rem py-1rem rounded-lg p-5">See All Classes</button>
       </Link>
     </div>
   </div>

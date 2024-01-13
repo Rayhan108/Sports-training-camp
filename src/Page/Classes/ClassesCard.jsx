@@ -27,7 +27,7 @@ const ClassesCard = ({ singleClass, handleSelectClass, loggedUser, i }) => {
         <div className="card-actions">
           <button
             onClick={() => handleSelectClass(singleClass?._id)}
-            className={"btn btn-primary"}
+            className={"h-3rem bg-[#f7760c] text-white px-1rem py-1rem rounded-lg p-5"}
             disabled={
               loggedUser?.role == "admin" ||
               loggedUser?.role == "instructor" ||
@@ -36,6 +36,7 @@ const ClassesCard = ({ singleClass, handleSelectClass, loggedUser, i }) => {
           >
             Select Class
           </button>
+          
         </div>
       </div>
     </motion.div>

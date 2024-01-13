@@ -34,7 +34,7 @@ const AboutUs = () => {
               <p className="">
               At Sports Training Camp, we bring together a team of expert coaches and trainers who are passionate about their respective sports. Our diverse range of training programs covers various disciplines, including soccer, basketball, tennis, swimming, track and field, and more. With state-of-the-art facilities and top-notch equipment, we provide a supportive and challenging environment where athletes can grow and thrive.
               </p>
-              <button className="btn text-white bg-blue-900">Learn More</button>
+              <button className="btn text-white bg-orange-500">Learn More</button>
             </div>
           </div>
         </div>

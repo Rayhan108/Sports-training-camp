@@ -1,11 +1,12 @@
 import { Helmet } from "react-helmet-async";
-import TopSlider from "../TopSlider/TopSlider";
+
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstractors from "../PopularInstractors/PopularInstractors";
 import AboutUs from "../AboutUs/AboutUs";
 import Topplayer from "../TopPlayer/Topplayer";
 import Subscribe from "../Subscribe/Subscribe";
 import WhyJoinUs from "../WhyJoinUs/WhyJoinUs";
+import HeroSlider from "../../../../Component/HeroSlider/HeroSlider";
 
 
 const Home = () => {
@@ -19,7 +20,8 @@ const Home = () => {
       </Helmet>
       <div className="">
   
-        <TopSlider></TopSlider>
+        {/* <TopSlider></TopSlider> */}
+        <HeroSlider/>
         <PopularClasses></PopularClasses>
         <PopularInstractors></PopularInstractors>
         <Topplayer></Topplayer>
